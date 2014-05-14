@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="myApp">
+<html lang="en" ng-app="myApp"  ng-controller="DemoController">
 <head>
   <meta name="generator"
   content="HTML Tidy for HTML5 (experimental) for Windows https://github.com/w3c/tidy-html5/tree/c63cc39" />
@@ -9,20 +9,46 @@
   <link href="css/leaflet.css" rel="stylesheet" />
   <link rel="stylesheet" href="css/app.css" />
   <link rel="stylesheet" type="text/css" href="http://cloud.github.com/downloads/lafeber/world-flags-sprite/flags32.css" />
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
   <script src="http://d3js.org/d3.v3.min.js"></script>
 
 <script src="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.js"></script>
+
 </head>
 
-  <body ng-controller="DemoController">
+  <body>
+
+
     <div class="info country f32">
         <div ng-show="geojson.selected" class="flag" ng-class="countries[geojson.selected.id]['alpha-2']|lowercase"></div>
         {{ geojson.selected.properties || 'No country'}}
     </div>
 <!--     <div class="info box">Map center: [ lat: {{ center.lat | number:4 }}, lng: {{ center.lng | number:4 }} ]</div> -->
     <leaflet center="center" events="events" legend="legend" geojson="geojson"></leaflet>
-    <table>
-      <tr ng-repeat="foot in football" ng-class-odd="'odd'" ng-class-even="'even'">
+  
+  Search: <input ng-model="query">
+  Sort by:
+  <select ng-model="orderProp">
+    <option value="fifarank">FIFA Rank</option>
+    <option value="age">Newest</option>
+  </select>
+<div>
+Ordered By: {{orderByField}}, Reverse Sort: {{reverseSort}}
+</div>
+    <table class='table table-bordered'>
+    <thead>
+      <tr class="foot">
+        <th><a href="" ng-click="predicate = 'fifarank'; reverse=false">Country</a></th>
+        <th><a href="" ng-click="predicate = 'fifarank'; reverse=false">FIFA Rank</a></th>
+        <th>ESPN SPI</th>
+        <th>FIFA-SPI</th>
+        <th>AVG FIFA-SPI</th>
+        <th>Attack Rating</th>
+        <th>Defense Rating</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr ng-repeat="foot in football|orderBy:orderByField">
         <td>{{foot.country}}</td>
         <td>{{foot.fifarank}}</td>
         <td>{{foot.spirank}}</td>
@@ -32,10 +58,8 @@
         <td>{{foot.spirank}}</td>
 
       </tr>
+      </tbody>
     </table>
-<!-- <div id="map2">
-  
-</div> -->
 
   </body>
 

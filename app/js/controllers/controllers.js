@@ -4,9 +4,11 @@
 MIGHT WANT TO USE NG-CLOAK SO WE DON'T SEE FLASHES OF UN PARSED DATA
 OR PUT ANGULAR SCRIPT IN HEAD*/
 
-myApp.controller('DemoController', ["$scope", "$http",
-    function($scope, $http) {
+myApp.controller('DemoController', ["$scope", "$http",'$q',
+    function($scope, $http, $q) {
 
+    	 $scope.orderByField = 'fifarank';
+  		$scope.reverseSort = false;
         $scope.$on("leafletDirectiveMap.geojsonMouseover", function(ev, leafletEvent) {
             //countryMouseover(leafletEvent);
         });
@@ -31,11 +33,6 @@ myApp.controller('DemoController', ["$scope", "$http",
         function countryClick(country, event) {
             console.log(country.properties.name);
         }
-
-        // Get a country paint color from the continents array of colors
-
-
-
 
 
         function getColorFootball(d) {
@@ -69,34 +66,18 @@ myApp.controller('DemoController', ["$scope", "$http",
             };
         }
 
-        // Mouse over function, called from the Leaflet Map Events
-
-        // function countryMouseover(leafletEvent) {
-        //     var layer = leafletEvent.target;
-        //     layer.setStyle({
-        //         weight: 2,
-        //         color: '#666',
-        //         fillColor: 'white'
-        //     });
-        //     layer.bringToFront();
-        // }
-
-        // Get the countries data from a JSON
-        $http.get("data/football.json").success(function(data, status) {
-
-            // Put the countries on an associative array
-            // $scope.countries = {};
-            // for (var i = 0; i < data.length; i++) {
-            //     var country = data[i];
-            //     $scope.countries[country['name']] = country;
-            // }
-             $scope.football = {};
+        $http.get("data/football.json").then(function(result) {
+                var data=result.data
+                var football = {};
                 for (var i = 0; i < data.length; i++) {
                     var country = data[i];
-                    $scope.football[country['alpha-3']] = country;
+                    football[country['alpha-3']] = country;
 
                 }
-                // console.log($scope.football)
+                return $scope.football = football
+        });
+
+
 
             // http://thematicmapping.org/downloads/world_borders.php
             // qgis to do centroids, move US, save as geojson
@@ -109,12 +90,35 @@ myApp.controller('DemoController', ["$scope", "$http",
                     }
                 });
             });
+// myAppServices.factory('getLocalTopoJSONSrvc', function($q, $http) {
+//   return {
+
+//     getLocalTopoJSON: function() {
+
+//       //return $http.get("data/townshipQ5000_id_1e-8.json")      
+//       return $http.get("data/county.topojson").then(function(response) {
+//         if (typeof response.data === 'object') {
+
+//           var geoJsonObject = topojson.feature(response.data, response.data.objects.county)
+
+//           return geoJsonObject;
+//         } else {
+//             // invalid response
+//             return $q.reject(response.data);
+//         }
+
+//       }, function(response) {
+//         // something went wrong
+//         return $q.reject(response.data);
+//       }); 
+        
+//       // map.data.addGeoJson(geoJsonObject);               
+
+//     }// end getGeoJSON function
 
 
-      
-
-
-        });
+//   };
+// });
 
 
 

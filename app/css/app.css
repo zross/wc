@@ -130,15 +130,6 @@ input[type="text"],input[type="url"] {
         }
 
 
-   .odd {
-                background-color: #FFF;
-            }
-            .even {
-                background-color: #ccc;
-            }
-            table{
-                border: 1px solid #ccc;
-/*           #map2 {
-            height: 90%;
-            width: 100%;
-        }*/
+  thead{
+    color:'red';
+  }

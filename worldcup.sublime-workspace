@@ -1,0 +1,437 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"getPostg",
+				"getPostgresData"
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"$",
+				"$controller	AngularJS"
+			],
+			[
+				"$root",
+				"$rootScope	AngularJS(DI)"
+			],
+			[
+				"routeP",
+				"$routeProvider	AngularJS"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"git",
+				"Git: Status"
+			],
+			[
+				"chan",
+				"Git: Change Branch"
+			],
+			[
+				"git br",
+				"Git: New Branch"
+			],
+			[
+				"html",
+				"HTMLPrettify: Set Prettify Preferences"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"push",
+				"Git: Push Current Branch"
+			],
+			[
+				"q",
+				"Git: Quick Commit"
+			],
+			[
+				"add",
+				"Git: Add..."
+			],
+			[
+				"markd",
+				"Markdown Preview: Github Flavored Markdown: Preview in Browser"
+			],
+			[
+				"mark",
+				"Markdown Preview: Github Flavored Markdown: Preview in Browser"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"package",
+				"Package Control: Remove Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"angu",
+				"AngularJS: Look Up Definition"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 576.0
+	},
+	"console":
+	{
+		"height": 381.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/X/web_development/working/worldcup/worldcup",
+		"/X/projects/cehtp_pesticide/web/cehtp_pesticide/pg-server.js",
+		"/X/projects/cehtp_pesticide/web/cehtp_pesticide/node_modules/requirejs/README.md",
+		"/X/projects/cehtp_pesticide/web/cehtp_pesticide/node_modules/querystring/Readme.md",
+		"/X/projects/cehtp_pesticide/web/cehtp_pesticide/node_modules/protractor/README.md",
+		"/X/projects/cehtp_pesticide/web/cehtp_pesticide/node_modules/pg.js/README.md",
+		"/X/projects/cehtp_pesticide/web/cehtp_pesticide/node_modules/karma/README.md",
+		"/X/projects/cehtp_pesticide/web/cehtp_pesticide/node_modules/jade/README.md",
+		"/X/projects/cehtp_pesticide/web/cehtp_pesticide/node_modules/http-server/README.md",
+		"/X/projects/cehtp_pesticide/web/cehtp_pesticide/node_modules/express/Readme.md",
+		"/X/projects/cehtp_pesticide/web/cehtp_pesticide/node_modules/connect/Readme.md",
+		"/X/projects/cehtp_pesticide/web/cehtp_pesticide/bower_components/topojson/README.md",
+		"/X/projects/cehtp_pesticide/web/cehtp_pesticide/bower_components/requirejs/README.md",
+		"/X/projects/cehtp_pesticide/web/cehtp_pesticide/bower_components/leaflet/README.md",
+		"/X/projects/cehtp_pesticide/web/cehtp_pesticide/bower_components/bootstrap/README.md",
+		"/X/projects/cehtp_pesticide/web/cehtp_pesticide/bower_components/angular-route/README.md",
+		"/X/projects/cehtp_pesticide/web/cehtp_pesticide/bower_components/angular-resource/README.md",
+		"/X/projects/cehtp_pesticide/web/cehtp_pesticide/bower_components/angular-mocks/README.md",
+		"/X/projects/cehtp_pesticide/web/cehtp_pesticide/bower_components/angular-loader/README.md",
+		"/X/projects/cehtp_pesticide/web/cehtp_pesticide/bower_components/angular/README.md",
+		"/X/projects/cehtp_pesticide/web/cehtp_pesticide/README.md",
+		"/X/projects/cehtp_pesticide/web/cehtp_pesticide/node_modules/karma/node_modules/colors/ReadMe.md",
+		"/X/projects/cehtp_pesticide/web/cehtp_pesticide/node_modules/http-server/node_modules/colors/ReadMe.md",
+		"/X/projects/cehtp_pesticide/web/cehtp_pesticide/app/css/app.css",
+		"/X/projects/cehtp_pesticide/web/cehtp_pesticide/routes/apiTownship.js",
+		"/X/projects/cehtp_pesticide/web/cehtp_pesticide/node_modules/protractor/node_modules/glob/examples/g.js",
+		"/X/projects/cehtp_pesticide/web/cehtp_pesticide/test-server.js",
+		"/X/projects/cehtp_pesticide/web/cehtp_pesticide/node_modules/serve-index/.travis.yml",
+		"/X/projects/cehtp_pesticide/web/cehtp_pesticide/node_modules/http-server/node_modules/union/examples/simple/middleware/favicon.js",
+		"/X/projects/cehtp_pesticide/web/cehtp_pesticide/node_modules/protractor/node_modules/selenium-webdriver/docs/module_selenium-webdriver_remote_class_DriverService.html",
+		"/X/projects/cehtp_pesticide/web/cehtp_pesticide/express_pg_server.js",
+		"/X/projects/cehtp_pesticide/web/cehtp_pesticide/old/pg-server.js",
+		"/X/projects/cehtp_pesticide/web/cehtp_pesticide/start_pg_server.bat",
+		"/X/projects/cehtp_pesticide/web/cehtp_pesticide/start_server.bat",
+		"/X/projects/cehtp_pesticide/web/cehtp_pesticide/app/js/services.js",
+		"/X/projects/cehtp_pesticide/web/cehtp_pesticide/node_modules/topojson/node_modules/d3/node_modules/jsdom/node_modules/cssstyle/lib/properties/textOverlineWidth.js",
+		"/X/projects/cehtp_pesticide/web/cehtp_pesticide/node_modules/url/node_modules/punycode/vendor/requirejs/tests/text/textOnly.html",
+		"/X/projects/cehtp_pesticide/web/cehtp_pesticide/geo.js",
+		"/X/projects/cehtp_pesticide/web/cehtp_pesticide/app.js",
+		"/X/projects/cehtp_pesticide/web/cehtp_pesticide/manual_js/angular-leaflet-directive.min.js",
+		"/X/projects/cehtp_pesticide/web/cehtp_pesticide/bower.json",
+		"/C/Users/Zev Ross/AppData/Roaming/Sublime Text 3/Packages/HTML-CSS-JS Prettify/.jsbeautifyrc",
+		"/X/projects/cehtp_pesticide/web/cehtp_pesticide/app/js/filters.js",
+		"/X/projects/cehtp_pesticide/web/cehtp_pesticide/node_modules/protractor/node_modules/selenium-webdriver/docs/class_webdriver_stacktrace_Snapshot.html",
+		"/X/projects/cehtp_pesticide/web/cehtp_pesticide/node_modules/karma/lib/init/color_schemes.js",
+		"/X/projects/cehtp_pesticide/web/cehtp_pesticide/cehtp_pesticide.sublime-project",
+		"/X/projects/cehtp_pesticide/web/cehtp_pesticide/node_modules/pg.js/lib/types/arrayParser.js",
+		"/X/projects/cehtp_pesticide/web/cehtp_pesticide/app/partials/partial1.html",
+		"/X/projects/cehtp_pesticide/web/cehtp_pesticide/app/index.html",
+		"/C/Users/Zev Ross/AppData/Roaming/Sublime Text 3/Packages/HTML-CSS-JS Prettify/HTMLPrettify.sublime-settings",
+		"/X/projects/cehtp_pesticide/web/cehtp_pesticide/node_modules/topojson/node_modules/d3/src/geo/path-area.js",
+		"/X/projects/cehtp_pesticide/web/cehtp_pesticide/app/package.json",
+		"/D/junk/leaflet2/index.html",
+		"/D/junk/leaflet2/township.json",
+		"/X/projects/cehtp_pesticide/web/cehtp_pesticide/node_modules/protractor/node_modules/minijasminenode/spec/syntax_error.js",
+		"/X/projects/cehtp_pesticide/web/cehtp_pesticide/app/js/app.js",
+		"/X/projects/cehtp_pesticide/web/cehtp_pesticide/node_modules/protractor/docs/processors/add-links.js",
+		"/X/projects/cehtp_pesticide/web/cehtp_pesticide/node_modules/pg.js/node_modules/pgpass/node_modules/split/node_modules/through/test/auto-destroy.js",
+		"/X/projects/cehtp_pesticide/web/cehtp_pesticide/routes/index.js",
+		"/X/projects/cehtp_pesticide/web/cehtp_pesticide/views/layout.jade",
+		"/X/projects/cehtp_pesticide/web/cehtp_pesticide/views/index.jade",
+		"/X/projects/cehtp_pesticide/web/cehtp_pesticide/start_web_server.bat",
+		"/X/projects/cehtp_pesticide/web/cehtp_pesticide/package.json",
+		"/X/projects/cehtp_pesticide/web/cehtp_pesticide/web_server.js",
+		"/C/Users/Zev Ross/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
+		"/C/Users/Zev Ross/AppData/Roaming/Sublime Text 3/Packages/Default/Default (Windows).sublime-keymap",
+		"/X/projects/cehtp_pesticide/web/cehtp_pesticide/app/partials/modal.html",
+		"/X/projects/cehtp_pesticide/README.md",
+		"/X/projects/cehtp_pesticide/web/cehtp_pesticide/bower_components/jquery/src/css/var/getStyles.js",
+		"/X/projects/cehtp_pesticide/web/cehtp_pesticide/node_modules/pg.js/node_modules/generic-pool/.travis.yml",
+		"/X/projects/cehtp_pesticide/web/cehtp_pesticide/node_modules/pg.js/node_modules/pgpass/node_modules/split/node_modules/through/readme.markdown",
+		"/X/projects/cehtp_pesticide/web/cehtp_pesticide/start_express_pg_server.bat",
+		"/X/projects/cehtp_pesticide/web/cehtp_pesticide/xx",
+		"/X/projects/cehtp_pesticide/web/cehtp_pesticide/app/js/directives.js",
+		"/D/dropbox/Dropbox/work/web_development/projects/cehtp_pesticide/pg-server.js",
+		"/D/dropbox/Dropbox/work/web_development/projects/cehtp_pesticide/start_test_server.bat",
+		"/D/dropbox/Dropbox/work/web_development/projects/cehtp_pesticide/README.md",
+		"/D/dropbox/Dropbox/work/web_development/projects/cehtp_pesticide/site/app/js/services.js",
+		"/D/dropbox/Dropbox/work/web_development/projects/cehtp_pesticide/site/app/js/controllers.js",
+		"/D/dropbox/Dropbox/work/web_development/projects/cehtp_pesticide/server/web-server.js",
+		"/D/dropbox/Dropbox/work/web_development/projects/cehtp_pesticide/site/app/index.html",
+		"/D/dropbox/Dropbox/work/web_development/projects/cehtp_pesticide/site/app/partials/partial1.html",
+		"/D/dropbox/Dropbox/work/web_development/projects/cehtp_pesticide/web-server.js",
+		"/D/dropbox/Dropbox/work/web_development/projects/cehtp_pesticide/app/js/filters.js",
+		"/D/dropbox/Dropbox/work/web_development/projects/cehtp_pesticide/app/js/services.js",
+		"/D/dropbox/Dropbox/work/web_development/projects/cehtp_pesticide/app/js/directives.js",
+		"/D/dropbox/Dropbox/work/web_development/projects/cehtp_pesticide/app/js/app.js",
+		"/D/dropbox/Dropbox/work/web_development/projects/cehtp_pesticide/app/index.html",
+		"/D/dropbox/Dropbox/work/web_development/projects/cehtp_pesticide/app/js/controllers.js",
+		"/D/dropbox/Dropbox/work/web_development/projects/cehtp_pesticide/app/partials/partial1.html",
+		"/D/dropbox/Dropbox/work/web_development/projects/cehtp_pesticide/bower_components/requirejs/require.js",
+		"/D/dropbox/Dropbox/work/web_development/projects/cehtp_pesticide/node_modules/pg/lib/query.js",
+		"/D/dropbox/Dropbox/work/web_development/projects/cehtp_pesticide/bower_components/jquery/src/queue.js",
+		"/C/wamp/www/testing/google_wms/index.html",
+		"/D/dropbox/Dropbox/work/web_development/projects/cehtp_pesticide/app/partials/partial2.html",
+		"/D/dropbox/Dropbox/work/web_development/www/New folder/angular-seed-master/app/index.html",
+		"/C/Program Files/Sublime Text 3/Packages/Color Scheme - Default.sublime-package",
+		"/C/Users/Zev Ross/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/D/dropbox/Dropbox/work/web_development/www/cehtp_simple/app/js/controllers/controllers.js",
+		"/D/dropbox/Dropbox/work/web_development/www/cehtp_simple/app/lib/angular/angular.js",
+		"/D/dropbox/Dropbox/work/web_development/www/cehtp_simple/app/templates/partials/partial1.html",
+		"/D/dropbox/Dropbox/work/web_development/www/cehtp_simple/app/css/app.css",
+		"/D/dropbox/Dropbox/work/web_development/www/cehtp_simple/app/css/main.css",
+		"/D/dropbox/Dropbox/work/web_development/www/cehtp_simple/app/index.html",
+		"/C/wamp/www/templates/angular/app/js/app.js",
+		"/C/wamp/www/templates/angular/app/index.html",
+		"/C/wamp/www/templates/angular/app/js/services/srvc_getCartoDBdata.js",
+		"/C/wamp/www/templates/angular/app/js/controllers/ctrl_displayData.js",
+		"/C/wamp/www/projects/cehtp/src/cehtp_resources.js",
+		"/D/dropbox/Dropbox/work/web_development/www/cehtp_bootstrap/app/js/services.js",
+		"/D/dropbox/Dropbox/work/web_development/www/cehtp_simple/app/js/services/services.js",
+		"/C/wamp/www/templates/angular/app/css/app.css",
+		"/C/Users/Zev Ross/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings"
+	],
+	"find":
+	{
+		"height": 40.0
+	},
+	"find_in_files":
+	{
+		"height": 102.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"http",
+			"resource",
+			"modal",
+			"handl",
+			"prepFor",
+			"getpostg",
+			"Townshi",
+			">\n",
+			"^\\n",
+			"1H-AS-INDACENO[3,2-D]OXACYCLODODECIN-7,15-DIONE, 2-[(6-DEOXY-3-O-ETHYL-2,4-DI-O-METHYL-A-L-MANNOPYRANOSYL)OXY]-13-[[(2R,5S,6R)-5-(DIMETHYLAMINO) TETRAHYDRO-6-METHYL-2H-PY",
+			"items",
+			"console.log",
+			"group",
+			"groups",
+			"mapCtrl",
+			"scope.$",
+			"getrawctr",
+			"rows",
+			"app",
+			"myc",
+			"auto_compl",
+			"abc"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 32.0
+	},
+	"input":
+	{
+		"height": 37.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.git":
+	{
+		"height": 85.0
+	},
+	"project": "worldcup",
+	"replace":
+	{
+		"height": 74.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"app.js",
+				"app.js"
+			],
+			[
+				"pg.js",
+				"pg-server.js"
+			],
+			[
+				"services",
+				"app\\js\\services.js"
+			],
+			[
+				"pg",
+				"old\\pg-server.js"
+			],
+			[
+				"server",
+				"test-server.js"
+			],
+			[
+				"pg-",
+				"pg-server.js"
+			],
+			[
+				"town",
+				"routes\\apiTownship.js"
+			],
+			[
+				"geo",
+				"geo.js"
+			],
+			[
+				"app",
+				"app.js"
+			],
+			[
+				"inde",
+				"app\\index.html"
+			],
+			[
+				"cssapp",
+				"app\\css\\app.css"
+			],
+			[
+				"partial",
+				"app\\partials\\partial1.html"
+			],
+			[
+				"q",
+				"bower_components\\jquery\\src\\queue.js"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"D:\\dropbox\\Dropbox\\work\\web_development\\www\\cehtp_bootstrap\\cehtp_bootstrap.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 263.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+		"max_columns": 2
+	}
+}
