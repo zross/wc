@@ -57,6 +57,7 @@ myApp.controller('DemoController', ["$scope", "$http",
         // Get a country paint color from the continents array of colors
 
         function getColor(country) {
+
             if (!country || !country["region-code"]) {
                 return "#FFF";
             }
@@ -70,6 +71,10 @@ myApp.controller('DemoController', ["$scope", "$http",
 
 
         function getColorFootball(d) {
+        	console.log(d)
+        	if (d){
+        		d=d['fifarank']
+        	}
             return d > 35 ? '#800026' :
                    d > 30  ? '#BD0026' :
                    d > 25  ? '#E31A1C' :
@@ -77,12 +82,14 @@ myApp.controller('DemoController', ["$scope", "$http",
                    d > 15   ? '#FD8D3C' :
                    d > 10   ? '#FEB24C' :
                    d > 5   ? '#FED976' :
-                              '#FFEDA0';
+                              'grey';
         }
 
+
         function style(feature) {
+     		
             return {
-                fillColor: getColor($scope.countries[feature.id]),
+                fillColor: getColorFootball($scope.football[feature.id]),
                 weight: 2,
                 opacity: 1,
                 color: 'white',
@@ -129,8 +136,8 @@ myApp.controller('DemoController', ["$scope", "$http",
                 $scope.football = {};
                 for (var i = 0; i < data.length; i++) {
                     var country = data[i];
-                    $scope.football[country['country']] = country;
-                    console.log($scope.football)
+                    $scope.football[country['alpha-3']] = country;
+
                 }
 
             });
