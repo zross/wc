@@ -4,6 +4,28 @@
   background-color: #003366;
 }*/
 /* colors 003366, 330033, 66600 */
+body{
+  font-family: Bitter, Georgia, serif;
+}
+
+table{
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+tr{
+  text-align: center;
+}
+
+td.country{
+  text-align: left;
+}
+
+
+h1{
+  font-size: 33.6363639831543px;
+  letter-spacing: -0.3400000035762787px;
+  text-align: center;
+}
 
 .inline {
     display:inline-block;
