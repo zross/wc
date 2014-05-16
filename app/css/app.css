@@ -116,9 +116,6 @@ input[type="text"],input[type="url"] {
         div.country {
             font-size: 2em;
             font-weight: bold;
-            position: absolute;
-            bottom: 1em;
-            left: 1em;
             z-index: 100;
             padding: .2em .5em;
             line-height: 1.1em;
