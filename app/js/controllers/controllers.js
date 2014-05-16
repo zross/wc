@@ -34,6 +34,8 @@ myApp.controller('DemoController', ["$scope", "$http", '$q',
                 lng: 14.0625,
                 zoom: 2
             },
+            scrollWheelZoom: false,
+            tileLayer: 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
             legend: {
                 colors: ['#CC0066', '#006699', '#FF0000', '#00CC00', '#FFCC00'],
                 labels: ['Oceania', 'America', 'Europe', 'Africa', 'Asia']
@@ -50,23 +52,37 @@ myApp.controller('DemoController', ["$scope", "$http", '$q',
             if (d) {
                 d = d['fifarank']
             }
-            return d > 35 ? ['#800026', 1] :
-                d > 25 ? ['#BD0026', 1] :
-                d > 20 ? ['#E31A1C', 1] :
-                d > 15 ? ['#FC4E2A', 1] :
-                d > 10 ? ['#FD8D3C', 1] :
-                d > 5 ? ['#FEB24C', 1] :
-                d > 0 ? ['#FED976', 1] : ['grey', 0];
+            return d > 35 ? ['#800026', 0.8] :
+                d > 25 ? ['#BD0026', 0.8] :
+                d > 20 ? ['#E31A1C', 0.8] :
+                d > 15 ? ['#FC4E2A', 0.8] :
+                d > 10 ? ['#FD8D3C', 0.8] :
+                d > 5 ? ['#FEB24C', 0.8] :
+                d > 0 ? ['#FED976', 0.8] : 
+                ['grey', 0];
         }
+
+            function getRadiusFootball(d) {
+
+            if (d) {
+                d = d['fifarank']
+                return Math.sqrt(700*1/d)
+            } else {
+                return 0
+            }
+            
+        }
+
 
 
 
 
         function style(feature) {
             var vals = getColorFootball($scope.football[feature.properties.ISO3])
+            var rads = getRadiusFootball($scope.football[feature.properties.ISO3])
             return {
                 fillColor: vals[0],
-                radius: 8,
+                radius: rads,
                 color: "#000",
                 weight: 1,
                 opacity: vals[1],
@@ -88,24 +104,6 @@ myApp.controller('DemoController', ["$scope", "$http", '$q',
     
 
         });
-
-        $scope.countries = {};
-        $http.get("data/all.json").success(function(data, status) {
-
-           var tmpcountries = {};
-                for (var i=0; i< data.length; i++) {
-                    var country = data[i];
-                    tmpcountries[country['alpha-3']] = country;
-                }
-
-            //then set on scope
-            
-            $scope.countries = tmpcountries;
-            blah=tmpcountries;
-            console.log($scope.countries)
-
-        });
-
 
         // http://thematicmapping.org/downloads/world_borders.php
         // qgis to do centroids, move US, save as geojson

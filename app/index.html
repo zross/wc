@@ -23,15 +23,17 @@
 
 
     <!--     <div class="info box">Map center: [ lat: {{ center.lat | number:4 }}, lng: {{ center.lng | number:4 }} ]</div> -->
+
     <leaflet center="center" events="events" legend="legend" geojson="geojson"></leaflet>
+
     <hr>
 <div class="container">
     <div class="row">
 
 
         <div class="info country f32">
-            <div ng-show="geojson.selected" class="flag" ng-class="countries[geojson.selected.properties.ISO3]['alpha-2']|lowercase"></div>
-            {{ geojson.selected.properties.ISO3 || 'No country'}}
+            <div ng-show="geojson.selected" class="flag" ng-class="geojson.selected.properties.ISO2|lowercase"></div>
+            {{ geojson.selected.properties.NAME || 'No country'}}
         </div>
     </div>
  <hr>
