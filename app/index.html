@@ -26,24 +26,26 @@
 
         <leaflet center="center" events="events" legend="legend" geojson="geojson" width='100%' height='600'></leaflet>
 
+                    <div class="info country f32">
+                        <div ng-show="geojson.selected" class="flag" ng-class="geojson.selected.properties.ISO2|lowercase"></div>
+                        {{ geojson.selected.properties.NAME || 'Select country on map'}}
+                    </div>
         <hr>
 
-        <div class="row">
 
 
-            <div class="info country f32">
-                <div ng-show="geojson.selected" class="flag" ng-class="geojson.selected.properties.ISO2|lowercase"></div>
-                {{ geojson.selected.properties.NAME || 'No country'}}
-            </div>
-        </div>
-        <hr>
         <div class="col-md-10 col-md-offset-1">
             <div class="row well">
                 <form class="form-horizontal" role="form">
+           
+           
+        
                     <div class="form-group">
-                        <label for="search" class="col-sm-2 control-label">Search</label>
+                        <label for="search" class="col-sm-6 control-label">Filter countries in table</label>
                         <input ng-model="queryCountry">
                     </div>
+          
+
                 </form>
             </div>
             <hr>
@@ -86,54 +88,8 @@
 -->
 
 <script>
-// var map = new L.Map("map2", {center: [37.8, -96.9], zoom: 4})
-//     .addLayer(new L.TileLayer("http://{s}.tiles.mapbox.com/v3/examples.map-vyofok3q/{z}/{x}/{y}.png"));
-// var svg = d3.select(map.getPanes().overlayPane).append("svg"),
-//     g = svg.append("g").attr("class", "leaflet-zoom-hide");
-
-// d3.json("data/countriespt2.geojson", function(collection) {
-//   console.log(collection)
-//   var transform = d3.geo.transform({point: projectPoint}),
-//       path = d3.geo.path().projection(transform);
-
-//   var feature = g.selectAll("path")
-//       .data(collection.features)
-//       .enter()
-//       .append("path")
-//       .attr('cx', 50)
-//       .attr('cy', 50)
-//       .attr("fill", "yellow")
-//       .attr("r", 50);
-
-
-//   map.on("viewreset", reset);
-//   reset();
-
-//   // Reposition the SVG to cover the features.
-//   function reset() {
-//     var bounds = path.bounds(collection),
-//         topLeft = bounds[0],
-//         bottomRight = bounds[1];
-
-//     svg .attr("width", bottomRight[0] - topLeft[0])
-//         .attr("height", bottomRight[1] - topLeft[1])
-//         .style("left", topLeft[0] + "px")
-//         .style("top", topLeft[1] + "px");
-
-//     g   .attr("transform", "translate(" + -topLeft[0] + "," + -topLeft[1] + ")");
-
-//     feature.attr("d", path);
-//   }
-
-//   // Use Leaflet to implement a D3 geometric transformation.
-//   function projectPoint(x, y) {
-//     var point = map.latLngToLayerPoint(new L.LatLng(y, x));
-//     this.stream.point(point.x, point.y);
-//   }
-// });
 </script>
 
-<script src="http://d3js.org/d3.v3.min.js"></script>
 <script src="lib/angular/angular.js"></script>
 <script src="lib/angular/angular-route.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
