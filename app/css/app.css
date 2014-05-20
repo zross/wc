@@ -163,3 +163,8 @@ div.country {
     background: rgba(255, 255, 255, 0.9);
 }
 
+select.selectpicker{
+  width: 137px;
+  height: 26px;
+}
+

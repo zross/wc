@@ -15,7 +15,7 @@
 </head>
 
 <body ng-controller="DemoController">
-<div class="container">
+    <div class="container">
 
 
 
@@ -24,29 +24,28 @@
         </div>
         <leaflet center="center" events="events" legend="legend" geojson="geojson" width='100%' height='600'></leaflet>
 
-                    <div class="info country f32">
-                        <div ng-show="geojson.selected" class="flag" ng-class="geojson.selected.properties.ISO2|lowercase"></div>
-                        {{ geojson.selected.properties.NAME || 'Select country on map'}}
-                    </div>
+        <div class="info country f32">
+            <div ng-show="geojson.selected" class="flag" ng-class="geojson.selected.properties.ISO2|lowercase"></div>
+            <span>{{ geojson.selected.properties.NAME || 'Select country on map'}}</span>
+        </div>
 
- <hr>
+        <hr>
         <!--     <div class="info box">Map center: [ lat: {{ center.lat | number:4 }}, lng: {{ center.lng | number:4 }} ]</div> -->
-
-
-
 
 
         <div class="col-md-10 col-md-offset-1">
             <div class="row well">
                 <form class="form-horizontal" role="form">
-           
-           
-        
                     <div class="form-group">
-                        <label for="search" class="col-sm-6 control-label">Filter countries in table</label>
-                        <input ng-model="queryCountry">
+                        <label for="search" class="col-sm-6 control-label">Filter by Country</label>
+                        <input ng-model="search.country">
                     </div>
-          
+                    <div class="form-group">
+                        <label class="col-sm-6 control-label">Filter by World Cup Group</label>
+                        <select class="selectpicker" ng-model='search.Group' ng-options="city.Group as city.Group for city in football | unique:'Group' | orderBy:'Group'" fix>
+                        <option value="" selected="selected">-- All Groups --</option>
+                        </select>
+                    </div>
 
                 </form>
             </div>
@@ -55,19 +54,26 @@
                 <table class='table table-striped'>
                     <thead>
                         <tr class="foot">
-                            <th><a href="" ng-click="orderByField = 'country'; reverse=false">Country</a>
+                            <th><a href="" ng-click="orderByField = 'country'; reverse=!reverse">Country</a>
                             </th>
-                            <th><a href="" ng-click="predicate = 'fifarank'; reverse=false">FIFA Rank</a>
+                            <th><a href="" ng-click="orderByField = 'fifarank'; reverse=!reverse">FIFA Rank</a>
                             </th>
-                            <th>ESPN SPI</th>
-                            <th>FIFA-SPI</th>
-                            <th>AVG FIFA-SPI</th>
-                            <th>Attack Rating</th>
-                            <th>Defense Rating</th>
+                            <th><a href="" ng-click="orderByField = 'spirank'; reverse=!reverse">ESPN SPI</a>
+                            </th>
+                            <th><a href="" ng-click="orderByField = 'fifaspidiff'; reverse=!reverse">FIFA-SPI</a>
+                            </th>
+                            <th><a href="" ng-click="orderByField = 'fifaspiavg'; reverse=!reverse">AVG FIFA-SPI</a>
+                            </th>
+                            <th><a href="" ng-click="orderByField = 'attack'; reverse=!reverse">Attack Rating</a>
+                            </th>
+                            <th><a href="" ng-click="orderByField = 'defense'; reverse=!reverse">Defense Rating</a>
+                            </th>
+                            <th><a href="" ng-click="orderByField = 'Group'; reverse=!reverse">Group</a>
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr ng-repeat="foot in football | orderBy:orderByField | filter:queryCountry">
+                        <tr ng-repeat="foot in football | orderBy:orderByField:reverse | filter:search">
                             <td class='country'>{{foot.country}}</td>
                             <td>{{foot.fifarank}}</td>
                             <td>{{foot.spirank}}</td>
@@ -75,13 +81,14 @@
                             <td>{{foot.fifaspiavg}}</td>
                             <td>{{foot.attack}}</td>
                             <td>{{foot.spirank}}</td>
+                            <td>{{foot.Group}}</td>
 
                         </tr>
                     </tbody>
                 </table>
             </div>
         </div>
-</div>
+    </div>
 
 </body>
 
@@ -96,11 +103,12 @@
 <script src="lib/angular/angular-route.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.js"></script>
+<!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui/0.4.0/angular-ui.min.js"></script> -->
 <script src="lib/angular-leaflet-directive.js"></script>
 <script src="js/app.js"></script>
 
 <script src="js/controllers/controllers.js"></script>
-
+<script src="js/directives/directives.js"></script>
 <script src="js/services/services.js"></script>
 <script src="js/filters/filters.js"></script>
 <script src="lib/bootstrap.min.js"></script>
