@@ -3,7 +3,7 @@
 /* Controllers DON'T MANIPULATE DOM WITH CONTROLLER ONLY WITH DIRECTIVE
 MIGHT WANT TO USE NG-CLOAK SO WE DON'T SEE FLASHES OF UN PARSED DATA
 OR PUT ANGULAR SCRIPT IN HEAD*/
-var blah;
+
 myApp.controller('DemoController', ["$scope", "$http", '$q',
     function($scope, $http, $q) {
 
@@ -192,3 +192,34 @@ myApp.controller('DemoController', ["$scope", "$http", '$q',
 
     }
 ]);
+myApp.controller("GoogleMapsController", [ "$scope", function($scope) {
+    angular.extend($scope, {
+        berlin: {
+            lat: 15.52,
+            lng: 10.40,
+            zoom: 2
+        },
+        layers: {
+            baselayers: {
+                googleTerrain: {
+                    name: 'Google Terrain',
+                    layerType: 'TERRAIN',
+                    type: 'google'
+                },
+                googleHybrid: {
+                    name: 'Google Hybrid',
+                    layerType: 'HYBRID',
+                    type: 'google'
+                },
+                googleRoadmap: {
+                    name: 'Google Streets',
+                    layerType: 'ROADMAP',
+                    type: 'google'
+                }
+            }
+        },
+        defaults: {
+            scrollWheelZoom: false
+        }
+    });
+}]);

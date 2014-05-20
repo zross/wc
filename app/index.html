@@ -8,6 +8,8 @@
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/leaflet.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="http://cloud.github.com/downloads/lafeber/world-flags-sprite/flags32.css" />
+     <script src="http://maps.google.com/maps/api/js?v=3.2&sensor=false"></script>
+
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/app.css" />
     <script src="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.js"></script>
@@ -15,18 +17,23 @@
 </head>
 
 <body ng-controller="DemoController">
-    <div class="container">
-
-
-
-        <div class="row">
+      <div class="row">
             <h1>World Football Ranks</h1>
         </div>
-        <leaflet center="center" events="events" legend="legend" geojson="geojson" width='100%' height='600'></leaflet>
+
+    <div class="container">
+
+        <div ng-controller='GoogleMapsController'>
+        <!-- <leaflet center="center" events="events" legend="legend" geojson="geojson" width='100%' height='600'></leaflet> -->
+
+        <leaflet center="berlin" events="events" legend="legend"  width='100%' height='400' layers='layers' geojson="geojson" ></leaflet>
+</div>
+
+  
 
         <div class="info country f32">
             <div ng-show="geojson.selected" class="flag" ng-class="geojson.selected.properties.ISO2|lowercase"></div>
-            <span>{{ geojson.selected.properties.NAME || 'Select country on map'}}</span>
+            <span ng-cloak>{{ geojson.selected.properties.NAME || 'Select country on map'}}</span>
         </div>
 
         <hr>
@@ -101,6 +108,7 @@
 
 <script src="lib/angular/angular.js"></script>
 <script src="lib/angular/angular-route.js"></script>
+
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.js"></script>
 <!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui/0.4.0/angular-ui.min.js"></script> -->
@@ -112,6 +120,7 @@
 <script src="js/services/services.js"></script>
 <script src="js/filters/filters.js"></script>
 <script src="lib/bootstrap.min.js"></script>
+<script src="lib/Google.js"></script>
 </body>
 
 </html>
