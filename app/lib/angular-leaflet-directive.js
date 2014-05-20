@@ -1160,11 +1160,11 @@
             }
           },
           crs: L.CRS.EPSG3857,
-          tileLayer: 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+          tileLayer: 'http://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png',
           tileLayerOptions: { attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors' },
           path: {
             weight: 10,
-            opacity: 1,
+            opacity: 0.1,
             color: '#0000ff'
           },
           center: {

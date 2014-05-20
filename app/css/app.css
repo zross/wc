@@ -3,55 +3,84 @@
 /*body{
   background-color: #003366;
 }*/
-/* colors 003366, 330033, 66600 */
 
+/* colors 003366, 330033, 66600 */
+ body {
+    font-family: Bitter, Georgia, serif;
+}
+table {
+    font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+tr {
+    text-align: center;
+}
+td.country {
+    text-align: left;
+}
+h1 {
+    font-size: 33.6363639831543px;
+    letter-spacing: -0.3400000035762787px;
+    text-align: center;
+}
 .inline {
     display:inline-block;
 }
-
 .menu {
-  list-style: none;
-  border-bottom: 0.1em solid black;
-  margin-bottom: 2em;
-  padding: 0 0 0.5em;
+    list-style: none;
+    border-bottom: 0.1em solid black;
+    margin-bottom: 2em;
+    padding: 0 0 0.5em;
 }
-
 .menu:before {
-  content: "[";
+    content:"[";
 }
-
 .menu:after {
-  content: "]";
+    content:"]";
 }
-
 .menu > li {
-  display: inline;
+    display: inline;
 }
-
 .menu > li:before {
-  content: "|";
-  padding-right: 0.3em;
+    content:"|";
+    padding-right: 0.3em;
 }
-
 .menu > li:nth-child(1):before {
-  content: "";
-  padding: 0;
+    content:"";
+    padding: 0;
 }
-
 /*Zev added this from http://pdenya.com/2013/08/08/vertical-space-in-bootstrap/
 to give a little more vertical space*/
-.voffset  { margin-top: 2px; }
-.voffset1 { margin-top: 5px; }
-.voffset2 { margin-top: 10px; }
-.voffset3 { margin-top: 15px; }
-.voffset4 { margin-top: 30px; }
-.voffset5 { margin-top: 40px; }
-.voffset6 { margin-top: 60px; }
-.voffset7 { margin-top: 80px; }
-.voffset8 { margin-top: 100px; }
-.voffset9 { margin-top: 150px; }
-
-@media (min-width: 768px){
+ .voffset {
+    margin-top: 2px;
+}
+.voffset1 {
+    margin-top: 5px;
+}
+.voffset2 {
+    margin-top: 10px;
+}
+.voffset3 {
+    margin-top: 15px;
+}
+.voffset4 {
+    margin-top: 30px;
+}
+.voffset5 {
+    margin-top: 40px;
+}
+.voffset6 {
+    margin-top: 60px;
+}
+.voffset7 {
+    margin-top: 80px;
+}
+.voffset8 {
+    margin-top: 100px;
+}
+.voffset9 {
+    margin-top: 150px;
+}
+@media (min-width: 768px) {
     .navbar-nav {
         margin: 0 auto;
         display: table;
@@ -65,68 +94,72 @@ to give a little more vertical space*/
         text-align: center;
     }
 }
-
 /* for now I wanted the text input boxes wider*/
-input[type="text"],input[type="url"] {
-  width: 120%;
+ input[type="text"], input[type="url"] {
+    width: 120%;
     box-sizing: border-box;
 }
+html {
+    font-family: sans-serif;
+}
+body, html {
+    height: 100%;
+}
 
-
-        html {
-            font-family: sans-serif;
-        }
-
-        body, html { height: 100%; }
-
-        .info {
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 5px;
-        }
-
-        .legend {
-            padding: 6px 8px;
-            font: 14px/16px Arial, Helvetica, sans-serif;
-            box-shadow: 0 0 15px rgba(0,0,0,0.2);
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 5px;
-            font-weight: bold;
-            line-height: 18px;
-            color: #555;
-        }
-
-        .legend i {
-            clear: both;
-            width: 16px;
-            height: 16px;
-            float: left;
-            opacity: 0.7;
-            margin-right: 8px;
-        }
-
-        div.box {
-            position: absolute;
-            top: 1em;
-            right: 1em;
-            z-index: 100;
-            padding: 1em;
-            text-align: center;
-        }
-
-        div.country {
-            font-size: 2em;
-            font-weight: bold;
-            z-index: 100;
-            padding: .2em .5em;
-            line-height: 1.1em;
-            text-align: center;
-        }
-
-           .angular-leaflet-map {
-            height: 70%;
-        }
-
-
-  thead{
+.legend {
+    padding: 6px 8px;
+    font: 14px/16px Arial, Helvetica, sans-serif;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 5px;
+    font-weight: bold;
+    line-height: 18px;
+    color: #555;
+    width:60px;
+}
+.legend i {
+    clear: both;
+    width: 20px;
+    height: 16px;
+    float: left;
+    opacity: 0.7;
+    margin-right: 8px;
+}
+div.box {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    z-index: 100;
+    padding: 1em;
+    text-align: center;
+}
+div.country {
+    font-size: 2em;
+    font-weight: bold;
+    z-index: 100;
+    padding: .2em .5em;
+    line-height: 1.1em;
+    text-align: center;
+}
+.angular-leaflet-map {
+    height: 70%;
+}
+thead {
     color:'red';
-  }
+}
+div.country {
+    font-size: 2em;
+    font-weight: bold;
+    height: 50px;
+/*    position: absolute;
+    top: 620px;
+    left: 550px;*/
+/*    z-index: 100;*/
+    padding: .2em .5em;
+    line-height: 1.1em;
+    text-align: center;
+    background-color: 'red';
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.9);
+}
+
