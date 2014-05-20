@@ -9,7 +9,7 @@
     <link href="css/leaflet.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="http://cloud.github.com/downloads/lafeber/world-flags-sprite/flags32.css" />
      <script src="http://maps.google.com/maps/api/js?v=3.2&sensor=false"></script>
-
+<script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/app.css" />
     <script src="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.js"></script>
@@ -35,7 +35,7 @@
 
         <div class="info country f32">
             <div ng-show="geojson.selected" class="flag" ng-class="geojson.selected.properties.ISO2|lowercase"></div>
-            <span ng-cloak>{{ geojson.selected.properties.NAME || 'Select country on map'}}  FIFA Rank: {{footballObject[geojson.selected.properties.ISO3].fifarank}}</span>
+            <span ng-cloak>{{ geojson.selected.properties.NAME ?  geojson.selected.properties.NAME + ' &#8212; FIFA Rank: ' + footballObject[geojson.selected.properties.ISO3].fifarank :  'Select country on map'}}</span>
         </div>
 
         <hr>

@@ -36,11 +36,17 @@ myApp.controller('DemoController', ["$scope", "$http", '$q',
         }
 
         $scope.testFunc = function(){
+
+            // var justGroup =  _.each(_.filter($scope.football, function(val){ return val.Group =='A'; }), function(val2){return val2.Group})
+            var justGroup = _.map(_.where($scope.football, {Group:'A'}), function(val2){return val2["alpha-3"]})
+            console.log($scope.footballgeo.features)
+            console.log($scope.footballgeo.features.map(function(e){return e.properties.ISO3}))
+            
             if($scope.geoTF){
                 $scope.geojson=[]
                 $scope.geoTF = false;
             }else{
-                console.log($scope.footballgeo.features.slice(1,50))
+                
                 $scope.footballgeo.features = $scope.footballgeo.features.slice(1,50)
                 $scope.geojson = {
                     data: $scope.footballgeo,
@@ -49,8 +55,6 @@ myApp.controller('DemoController', ["$scope", "$http", '$q',
                 }
                 $scope.geoTF = true;
             }
-            
-            console.log($scope.footballgeo)
         }
 
         var tilesDict = {
