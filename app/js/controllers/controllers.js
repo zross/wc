@@ -3,11 +3,35 @@
 /* Controllers DON'T MANIPULATE DOM WITH CONTROLLER ONLY WITH DIRECTIVE
 MIGHT WANT TO USE NG-CLOAK SO WE DON'T SEE FLASHES OF UN PARSED DATA
 OR PUT ANGULAR SCRIPT IN HEAD*/
-
+var blah;
 myApp.controller('DemoController', ["$scope", "$http", '$q',
     function($scope, $http, $q) {
 
-        $scope.footballSm=[ { "alpha-3" : "ARG", "country" : "Argentina", "fifarank" : 7, "fifarating" : "1178.0", "spirank" : 2, "spirating" : 90.2, "attack" : 2.9, "defense" : 0.4, "fifaspidiff" : 5, "fifaspiavg" : 4.5, "Group" : "F" }, { "alpha-3" : "AUS", "country" : "Australia", "fifarank" : 59, "fifarating" : "545.0", "spirank" : 40, "spirating" : 70.2, "attack" : 1.7, "defense" : 1.3, "fifaspidiff" : 19, "fifaspiavg" : 49.5, "Group" : "B" }]
+        $scope.footballSm = [{
+            "alpha-3": "ARG",
+            "country": "Argentina",
+            "fifarank": 7,
+            "fifarating": "1178.0",
+            "spirank": 2,
+            "spirating": 90.2,
+            "attack": 2.9,
+            "defense": 0.4,
+            "fifaspidiff": 5,
+            "fifaspiavg": 4.5,
+            "Group": "F"
+        }, {
+            "alpha-3": "AUS",
+            "country": "Australia",
+            "fifarank": 59,
+            "fifarating": "545.0",
+            "spirank": 40,
+            "spirating": 70.2,
+            "attack": 1.7,
+            "defense": 1.3,
+            "fifaspidiff": 19,
+            "fifaspiavg": 49.5,
+            "Group": "B"
+        }]
         $scope.orderByField = 'fifarank';
         $scope.reverseSort = false;
         $scope.limitGroup = 'A';
@@ -21,7 +45,7 @@ myApp.controller('DemoController', ["$scope", "$http", '$q',
 
 
         $scope.$on("leafletDirectiveMap.geojsonClick", function(ev, featureSelected, leafletEvent) {
-            console.log(featureSelected)
+     
             countryClick(featureSelected, leafletEvent);
         });
 
@@ -32,28 +56,28 @@ myApp.controller('DemoController', ["$scope", "$http", '$q',
                 color: '#666',
                 fillColor: 'white'
             });
-            layer.bringToFront();
+            //layer.bringToFront();
         }
 
-        $scope.testFunc = function(){
 
-            // var justGroup =  _.each(_.filter($scope.football, function(val){ return val.Group =='A'; }), function(val2){return val2.Group})
-            var justGroup = _.map(_.where($scope.football, {Group:'A'}), function(val2){return val2["alpha-3"]})
-            console.log($scope.footballgeo.features)
-            console.log($scope.footballgeo.features.map(function(e){return e.properties.ISO3}))
-            
-            if($scope.geoTF){
-                $scope.geojson=[]
-                $scope.geoTF = false;
-            }else{
-                
-                $scope.footballgeo.features = $scope.footballgeo.features.slice(1,50)
+
+        $scope.testFunc = function(thegroup) {
+            console.log(thegroup)
+            var data = $scope.footballgeo
+          var justGroup =_.filter($scope.footballgeo.features, function(x){return x.properties.Group==thegroup})
+            console.log(justGroup)
+
+            // if ($scope.geoTF) {
+            //     $scope.geojson = []
+            //     $scope.geoTF = false;
+            // } else {
+
+                data.features = justGroup
                 $scope.geojson = {
-                    data: $scope.footballgeo,
+                    data: data,
                     style: style,
                     resetStyleOnMouseout: true
-                }
-                $scope.geoTF = true;
+           
             }
         }
 
@@ -95,20 +119,7 @@ myApp.controller('DemoController', ["$scope", "$http", '$q',
         }
 
 
-        // function getColorFootball(d) {
 
-        //     if (d) {
-        //         d = d['fifarank']
-        //     }
-        //     return d > 35 ? ['#800026', 0.8] :
-        //         d > 25 ? ['#BD0026', 0.8] :
-        //         d > 20 ? ['#E31A1C', 0.8] :
-        //         d > 15 ? ['#FC4E2A', 0.8] :
-        //         d > 10 ? ['#FD8D3C', 0.8] :
-        //         d > 5 ? ['#FEB24C', 0.8] :
-        //         d > 0 ? ['#FED976', 0.8] : 
-        //         ['grey', 0];
-        // }
 
         function getColorFootball(d) {
             var col = ['grey', 0]
@@ -163,7 +174,7 @@ myApp.controller('DemoController', ["$scope", "$http", '$q',
 
             if (d) {
                 d = d['fifarank']
-                return Math.sqrt(700 * 1 / d)
+                return Math.sqrt(1200 * 1 / d)
             } else {
                 return 0
             }
@@ -193,8 +204,39 @@ myApp.controller('DemoController', ["$scope", "$http", '$q',
 
         // http://thematicmapping.org/downloads/world_borders.php
         // qgis to do centroids, move US, save as geojson
-   
+
         $http.get("data/countriespt2.geojson").success(function(data, status) {
+            //data.features = data.sort(propSort(["PARK_NAME"]));
+            var featuresLim = []
+            var minrank=0
+            for (var i = 0; i < data.features.length; i++) {
+
+                var amatch = _.where($scope.football, {
+                    "alpha-3": data.features[i].properties['ISO3']
+                })
+     
+                if (amatch.length > 0) {
+
+                    var feat = data.features[i]
+                    var currank = amatch[0]['fifarank']
+        
+
+                    var curgroup = amatch[0]['Group']
+                    feat.properties['fifarank'] = currank
+                    feat.properties['Group'] = curgroup
+
+                        featuresLim.push(feat)
+                 
+                    
+                }//end if
+
+
+            }//end loop through features
+             featuresLim.sort(propSort("fifarank"));
+            //featuresLim.sort(sortBy)
+      
+            data.features = featuresLim
+
 
             $scope.footballgeo = data
             angular.extend($scope, {
@@ -203,42 +245,60 @@ myApp.controller('DemoController', ["$scope", "$http", '$q',
                     style: style,
                     resetStyleOnMouseout: true
                 }
-            });
-        });
+            }); //end extend
+        }); //end get features
+
+function propSort(props) {
+  return function sort(a, b) {
+    var p;
+    a = a.properties;
+    b = b.properties;
+
+      p = props;
+      if (a[p] < b[p]) return -1;
+      if (a[p] > b[p]) return 1;
+  };
+}
 
 
 
 
     }
 ]);
-myApp.controller("GoogleMapsController", [ "$scope", function($scope) {
-    angular.extend($scope, {
-        berlin: {
-            lat: 15.52,
-            lng: 10.40,
-            zoom: 2
-        },
-        layers: {
-            baselayers: {
-                googleTerrain: {
-                    name: 'Google Terrain',
-                    layerType: 'TERRAIN',
-                    type: 'google'
-                },
-                googleHybrid: {
-                    name: 'Google Hybrid',
-                    layerType: 'HYBRID',
-                    type: 'google'
-                },
-                googleRoadmap: {
-                    name: 'Google Streets',
-                    layerType: 'ROADMAP',
-                    type: 'google'
+
+
+
+
+myApp.controller("GoogleMapsController", ["$scope",
+    function($scope) {
+        angular.extend($scope, {
+            berlin: {
+                lat: 15.52,
+                lng: 10.40,
+                zoom: 2
+            },
+            layers: {
+                baselayers: {
+                    googleTerrain: {
+                        name: 'Google Terrain',
+                        layerType: 'TERRAIN',
+                        type: 'google'
+                    },
+                    googleHybrid: {
+                        name: 'Google Hybrid',
+                        layerType: 'HYBRID',
+                        type: 'google'
+                    },
+                    googleRoadmap: {
+                        name: 'Google Streets',
+                        layerType: 'ROADMAP',
+                        type: 'google'
+                    }
                 }
+            },
+            defaults: {
+                scrollWheelZoom: false
             }
-        },
-        defaults: {
-            scrollWheelZoom: false
-        }
-    });
-}]);
+        });
+    }
+]);
