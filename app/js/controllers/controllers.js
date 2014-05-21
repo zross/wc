@@ -59,27 +59,51 @@ myApp.controller('DemoController', ["$scope", "$http", '$q',
             //layer.bringToFront();
         }
 
+        $scope.$watch(
+                    "search.Group",
+                    function( newValue, oldValue ) {
+ 
+                        // Ignore initial setup.
+                        if ( newValue === oldValue ) {
+ 
+                            return;
+ 
+                        }
+ 
+          var data = angular.copy($scope.footballgeo);
+          var justGroup =_.filter(data.features, function(x){return x.properties.Group==newValue})
+          console.log($scope.footballgeo)
 
-
-        $scope.testFunc = function(thegroup) {
-            console.log(thegroup)
-            var data = $scope.footballgeo
-          var justGroup =_.filter($scope.footballgeo.features, function(x){return x.properties.Group==thegroup})
-            console.log(justGroup)
-
-            // if ($scope.geoTF) {
-            //     $scope.geojson = []
-            //     $scope.geoTF = false;
-            // } else {
-
-                data.features = justGroup
+               data.features = justGroup
                 $scope.geojson = {
                     data: data,
                     style: style,
                     resetStyleOnMouseout: true
            
             }
-        }
+
+ 
+                    }
+                );
+ 
+
+        // $scope.testFunc = function(thegroup) {
+        // var data = $scope.footballgeo
+        //   var justGroup =_.filter($scope.footballgeo.features, function(x){return x.properties.Group==thegroup})
+
+        //     // if ($scope.geoTF) {
+        //     //     $scope.geojson = []
+        //     //     $scope.geoTF = false;
+        //     // } else {
+
+        //         data.features = justGroup
+        //         $scope.geojson = {
+        //             data: data,
+        //             style: style,
+        //             resetStyleOnMouseout: true
+           
+        //     }
+        // }
 
         var tilesDict = {
             openstreetmap: {
@@ -204,7 +228,7 @@ myApp.controller('DemoController', ["$scope", "$http", '$q',
 
         // http://thematicmapping.org/downloads/world_borders.php
         // qgis to do centroids, move US, save as geojson
-
+$scope.footballgeo ={};
         $http.get("data/countriespt2.geojson").success(function(data, status) {
             //data.features = data.sort(propSort(["PARK_NAME"]));
             var featuresLim = []

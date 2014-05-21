@@ -22,7 +22,6 @@
     <div class="container">
           <div class="row">
             <h1>World Football Ranks</h1>
-            <button ng-click="testFunc()">Click</button>
         </div>
 
         <div ng-controller='GoogleMapsController'>
@@ -51,7 +50,7 @@
                     </div>
                     <div class="form-group">
                         <label class="col-sm-6 control-label">Filter by World Cup Group</label>
-                        <select class="selectpicker" ng-model='search.Group' ng-change="testFunc(search.Group)" ng-options="city.Group as city.Group for city in football | unique:'Group' | orderBy:'Group'" fix>
+                        <select class="selectpicker" ng-model='search.Group'  ng-options="city.Group as city.Group for city in football | unique:'Group' | orderBy:'Group'" fix>
                         <option value="" selected="selected">-- All Groups --</option>
                         </select>
                     </div>
