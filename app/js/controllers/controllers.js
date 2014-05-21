@@ -4,8 +4,8 @@
 MIGHT WANT TO USE NG-CLOAK SO WE DON'T SEE FLASHES OF UN PARSED DATA
 OR PUT ANGULAR SCRIPT IN HEAD*/
 var blah;
-myApp.controller('DemoController', ["$scope", "$http", '$q',
-    function($scope, $http, $q) {
+myApp.controller('DemoController', ["$scope", "$http", '$q','$filter',
+    function($scope, $http, $q, $filter) {
 
         $scope.footballSm = [{
             "alpha-3": "ARG",
@@ -45,7 +45,7 @@ myApp.controller('DemoController', ["$scope", "$http", '$q',
 
 
         $scope.$on("leafletDirectiveMap.geojsonClick", function(ev, featureSelected, leafletEvent) {
-     
+
             countryClick(featureSelected, leafletEvent);
         });
 
@@ -60,32 +60,53 @@ myApp.controller('DemoController', ["$scope", "$http", '$q',
         }
 
         $scope.$watch(
-                    "search.Group",
-                    function( newValue, oldValue ) {
- 
-                        // Ignore initial setup.
-                        if ( newValue === oldValue ) {
- 
-                            return;
- 
-                        }
- 
-          var data = angular.copy($scope.footballgeo);
-          var justGroup =_.filter(data.features, function(x){return x.properties.Group==newValue})
-          console.log($scope.footballgeo)
+            "search.Group",
+            function(newValue, oldValue) {
 
-               data.features = justGroup
+                // Ignore initial setup.
+                if (newValue === oldValue) {
+
+                    return;
+
+                }
+                var data = angular.copy($scope.footballgeo);
+                var justGroup = _.filter(data.features, function(x) {
+                    return x.properties.Group == newValue
+                })
+
+
+                data.features = justGroup
                 $scope.geojson = {
                     data: data,
                     style: style,
                     resetStyleOnMouseout: true
-           
-            }
 
- 
-                    }
-                );
- 
+                }
+
+
+            }
+        );
+
+                $scope.$watch(
+            "search.country",
+            function(newValue, oldValue) {
+
+                // Ignore initial setup.
+                if (newValue === oldValue) {
+
+                    return;
+
+                }
+
+        
+         console.log($filter('filter')(['a', 'ba', 'c'], newValue))
+         console.log($scope.football)
+
+
+
+            }
+        );
+
 
         // $scope.testFunc = function(thegroup) {
         // var data = $scope.footballgeo
@@ -101,7 +122,7 @@ myApp.controller('DemoController', ["$scope", "$http", '$q',
         //             data: data,
         //             style: style,
         //             resetStyleOnMouseout: true
-           
+
         //     }
         // }
 
@@ -228,37 +249,37 @@ myApp.controller('DemoController', ["$scope", "$http", '$q',
 
         // http://thematicmapping.org/downloads/world_borders.php
         // qgis to do centroids, move US, save as geojson
-$scope.footballgeo ={};
+        $scope.footballgeo = {};
         $http.get("data/countriespt2.geojson").success(function(data, status) {
             //data.features = data.sort(propSort(["PARK_NAME"]));
             var featuresLim = []
-            var minrank=0
+            var minrank = 0
             for (var i = 0; i < data.features.length; i++) {
 
                 var amatch = _.where($scope.football, {
                     "alpha-3": data.features[i].properties['ISO3']
                 })
-     
+
                 if (amatch.length > 0) {
 
                     var feat = data.features[i]
                     var currank = amatch[0]['fifarank']
-        
+
 
                     var curgroup = amatch[0]['Group']
                     feat.properties['fifarank'] = currank
                     feat.properties['Group'] = curgroup
 
-                        featuresLim.push(feat)
-                 
-                    
-                }//end if
+                    featuresLim.push(feat)
 
 
-            }//end loop through features
-             featuresLim.sort(propSort("fifarank"));
+                } //end if
+
+
+            } //end loop through features
+            featuresLim.sort(propSort("fifarank"));
             //featuresLim.sort(sortBy)
-      
+
             data.features = featuresLim
 
 
@@ -272,17 +293,17 @@ $scope.footballgeo ={};
             }); //end extend
         }); //end get features
 
-function propSort(props) {
-  return function sort(a, b) {
-    var p;
-    a = a.properties;
-    b = b.properties;
+        function propSort(props) {
+            return function sort(a, b) {
+                var p;
+                a = a.properties;
+                b = b.properties;
 
-      p = props;
-      if (a[p] < b[p]) return -1;
-      if (a[p] > b[p]) return 1;
-  };
-}
+                p = props;
+                if (a[p] < b[p]) return -1;
+                if (a[p] > b[p]) return 1;
+            };
+        }
 
 
 
