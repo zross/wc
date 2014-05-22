@@ -60,7 +60,7 @@ myApp.controller('DemoController', ["$scope", "$http", '$q','$filter',
         }
 
         $scope.$watch(
-            "search.Group",
+            "search.country",
             function(newValue, oldValue) {
 
                 // Ignore initial setup.
@@ -69,6 +69,7 @@ myApp.controller('DemoController', ["$scope", "$http", '$q','$filter',
                     return;
 
                 }
+                console.log(newValue)
                 var data = angular.copy($scope.footballgeo);
                 var justGroup = _.filter(data.features, function(x) {
                     return x.properties.Group == newValue
@@ -83,29 +84,11 @@ myApp.controller('DemoController', ["$scope", "$http", '$q','$filter',
 
                 }
 
-
+console.log($filter('filter')(['a', 'ba', 'c'], newValue[0]))
             }
         );
 
-                $scope.$watch(
-            "search.country",
-            function(newValue, oldValue) {
 
-                // Ignore initial setup.
-                if (newValue === oldValue) {
-
-                    return;
-
-                }
-
-        
-         console.log($filter('filter')(['a', 'ba', 'c'], newValue))
-         console.log($scope.football)
-
-
-
-            }
-        );
 
 
         // $scope.testFunc = function(thegroup) {
