@@ -7,35 +7,10 @@ var blah;
 myApp.controller('DemoController', ["$scope", "$http", '$q', '$filter',
     function($scope, $http, $q, $filter) {
 
-        $scope.footballSm = [{
-            "alpha-3": "ARG",
-            "country": "Argentina",
-            "fifarank": 7,
-            "fifarating": "1178.0",
-            "spirank": 2,
-            "spirating": 90.2,
-            "attack": 2.9,
-            "defense": 0.4,
-            "fifaspidiff": 5,
-            "fifaspiavg": 4.5,
-            "Group": "F"
-        }, {
-            "alpha-3": "AUS",
-            "country": "Australia",
-            "fifarank": 59,
-            "fifarating": "545.0",
-            "spirank": 40,
-            "spirating": 70.2,
-            "attack": 1.7,
-            "defense": 1.3,
-            "fifaspidiff": 19,
-            "fifaspiavg": 49.5,
-            "Group": "B"
-        }]
         $scope.orderByField = 'fifarank';
         $scope.reverseSort = false;
-        $scope.limitGroup = 'A';
-        $scope.geoTF = 'true'
+        // $scope.limitGroup = 'A';
+        // $scope.geoTF = 'true'
         // $scope.search.country = '';
         // $scope.search.group = '';
 
@@ -49,15 +24,7 @@ myApp.controller('DemoController', ["$scope", "$http", '$q', '$filter',
             countryClick(featureSelected, leafletEvent);
         });
 
-        function countryMouseover(leafletEvent) {
-            var layer = leafletEvent.target;
-            layer.setStyle({
-                weight: 2,
-                color: '#666',
-                fillColor: 'white'
-            });
-            //layer.bringToFront();
-        }
+
 
         $scope.$watchCollection(
             "search",
@@ -67,7 +34,6 @@ myApp.controller('DemoController', ["$scope", "$http", '$q', '$filter',
                 if (newValue === oldValue) {
 
                     return;
-
                 }
                 var data = angular.copy($scope.footballgeo);
                 console.log(newValue)
@@ -93,8 +59,6 @@ myApp.controller('DemoController', ["$scope", "$http", '$q', '$filter',
                     }
                     }
 
-
-
                 })
 
 
@@ -106,45 +70,13 @@ myApp.controller('DemoController', ["$scope", "$http", '$q', '$filter',
 
                 }
 
-                console.log($filter('filter')(['abcd'], newValue.country))
             }
         );
 
 
 
 
-        // $scope.testFunc = function(thegroup) {
-        // var data = $scope.footballgeo
-        //   var justGroup =_.filter($scope.footballgeo.features, function(x){return x.properties.Group==thegroup})
 
-        //     // if ($scope.geoTF) {
-        //     //     $scope.geojson = []
-        //     //     $scope.geoTF = false;
-        //     // } else {
-
-        //         data.features = justGroup
-        //         $scope.geojson = {
-        //             data: data,
-        //             style: style,
-        //             resetStyleOnMouseout: true
-
-        //     }
-        // }
-
-        var tilesDict = {
-            openstreetmap: {
-                url: "http://{s}.tile.stamen.com/toner-labels/{z}/{x}/{y}.png",
-                options: {
-                    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                }
-            },
-            opencyclemap: {
-                url: "http://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png",
-                options: {
-                    attribution: 'All maps &copy; <a href="http://www.opencyclemap.org">OpenCycleMap</a>, map data &copy; <a href="http://www.openstreetmap.org">OpenStreetMap</a> (<a href="http://www.openstreetmap.org/copyright">ODbL</a>'
-                }
-            }
-        };
 
         angular.extend($scope, {
             center: {
@@ -153,7 +85,6 @@ myApp.controller('DemoController', ["$scope", "$http", '$q', '$filter',
                 zoom: 2
             },
             scrollWheelZoom: false,
-            tiles: 'a',
             legend: {
                 colors: ['#7fc97f', '#beaed4', '#fdc086', '#ffff99', '#386cb0', '#f0027f', '#bf5b17', '#666666'],
                 labels: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
@@ -168,53 +99,38 @@ myApp.controller('DemoController', ["$scope", "$http", '$q', '$filter',
             console.log(country.properties.name);
         }
 
+var opac = 0.8
+var circlecolors = {
+    'A': {color: '#7fc97f', opacity:opac}, 
+    'B': {color: '#beaed4', opacity:opac},
+    'C': {color: '#fdc086', opacity:opac},
+    'D': {color: '#ffff99', opacity:opac},
+    'E': {color: '#386cb0', opacity:opac},
+    'F': {color: '#f0027f', opacity:opac},
+    'G': {color: '#bf5b17', opacity:opac},
+    'H': {color: '#666666', opacity:opac}
+
+}
 
 
+function getColorFootball2(d){
 
-        function getColorFootball(d) {
-            var col = ['grey', 0]
+    return circlecolors[d.Group] || {color: 'grey', opacity:0}
 
-            if (d) {
-                d = d['Group']
-                if (d == 'A') {
-                    col = ['#7fc97f', 0.8]
-                }
-                if (d == 'B') {
-                    col = ['#beaed4', 0.8]
-                }
-                if (d == 'C') {
-                    col = ['#fdc086', 0.8]
-                }
-                if (d == 'D') {
-                    col = ['#ffff99', 0.8]
-                }
-                if (d == 'E') {
-                    col = ['#386cb0', 0.8]
-                }
-                if (d == 'F') {
-                    col = ['#f0027f', 0.8]
-                }
-                if (d == 'G') {
-                    col = ['#bf5b17', 0.8]
-                }
-                if (d == 'H') {
-                    col = ['#666666', 0.8]
-                }
+}
 
-            }
-            return col
-        }
+
 
         function style(feature) {
-            var vals = getColorFootball($scope.footballObject[feature.properties.ISO3])
+            var vals = getColorFootball2($scope.footballObject[feature.properties.ISO3])
             var rads = getRadiusFootball($scope.footballObject[feature.properties.ISO3])
             return {
-                fillColor: vals[0],
+                fillColor: vals.color,
                 radius: rads,
                 color: "#000",
                 weight: 1,
-                opacity: vals[1],
-                fillOpacity: vals[1]
+                opacity: 1,
+                fillOpacity: vals.opacity
             };
         }
 
@@ -301,6 +217,19 @@ myApp.controller('DemoController', ["$scope", "$http", '$q', '$filter',
             }); //end extend
         }); //end get features
 
+
+
+        function countryMouseover(leafletEvent) {
+            var layer = leafletEvent.target;
+            layer.setStyle({
+                weight: 2,
+                color: '#666',
+                fillColor: 'white'
+            });
+            //layer.bringToFront();
+        }
+
+
         function propSort(props) {
             return function sort(a, b) {
                 var p;
@@ -319,17 +248,16 @@ myApp.controller('DemoController', ["$scope", "$http", '$q', '$filter',
     }
 ]);
 
-
-
-
+//mapoptions
 myApp.controller("GoogleMapsController", ["$scope",
     function($scope) {
         angular.extend($scope, {
-            berlin: {
+            world: {
                 lat: 15.52,
                 lng: 10.40,
                 zoom: 2
             },
+            scrollwheel: false,
             layers: {
                 baselayers: {
                     googleTerrain: {
@@ -350,7 +278,7 @@ myApp.controller("GoogleMapsController", ["$scope",
                 }
             },
             defaults: {
-                scrollWheelZoom: false
+                scrollwheel: false
             }
         });
     }
