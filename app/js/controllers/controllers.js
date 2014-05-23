@@ -4,7 +4,7 @@
 MIGHT WANT TO USE NG-CLOAK SO WE DON'T SEE FLASHES OF UN PARSED DATA
 OR PUT ANGULAR SCRIPT IN HEAD*/
 var blah;
-myApp.controller('DemoController', ["$scope", "$http", '$q','$filter',
+myApp.controller('DemoController', ["$scope", "$http", '$q', '$filter',
     function($scope, $http, $q, $filter) {
 
         $scope.footballSm = [{
@@ -59,8 +59,8 @@ myApp.controller('DemoController', ["$scope", "$http", '$q','$filter',
             //layer.bringToFront();
         }
 
-        $scope.$watch(
-            "search.country",
+        $scope.$watchCollection(
+            "search",
             function(newValue, oldValue) {
 
                 // Ignore initial setup.
@@ -69,10 +69,32 @@ myApp.controller('DemoController', ["$scope", "$http", '$q','$filter',
                     return;
 
                 }
-                console.log(newValue)
                 var data = angular.copy($scope.footballgeo);
+                console.log(newValue)
                 var justGroup = _.filter(data.features, function(x) {
-                    return x.properties.Group == newValue
+                    if (newValue.Group == '' || newValue.Group==undefined) {
+                        
+                        if (!newValue.country) {
+                            console.log('In blank group:In blank country')
+                            return true
+                        } else {
+                            console.log('In blank group:In NOT blank country')
+                            return $filter('filter')([x.properties.country], newValue.country).length>0
+
+                        }
+                    } else {
+                        console.log('In NOT blank group')
+                        if (!newValue.country){
+                            console.log('In NOT blank group: in blank country')
+                        return x.properties.Group == newValue.Group
+                    }else{
+                        console.log('In NOT blank group: in NOTblank country')
+                        return x.properties.Group == newValue.Group & $filter('filter')([x.properties.country], newValue.country).length>0
+                    }
+                    }
+
+
+
                 })
 
 
@@ -84,7 +106,7 @@ myApp.controller('DemoController', ["$scope", "$http", '$q','$filter',
 
                 }
 
-console.log($filter('filter')(['a', 'ba', 'c'], newValue[0]))
+                console.log($filter('filter')(['abcd'], newValue.country))
             }
         );
 
@@ -241,6 +263,7 @@ console.log($filter('filter')(['a', 'ba', 'c'], newValue[0]))
 
                 var amatch = _.where($scope.football, {
                     "alpha-3": data.features[i].properties['ISO3']
+
                 })
 
                 if (amatch.length > 0) {
@@ -250,8 +273,10 @@ console.log($filter('filter')(['a', 'ba', 'c'], newValue[0]))
 
 
                     var curgroup = amatch[0]['Group']
+                    var curcountry = amatch[0]['country']
                     feat.properties['fifarank'] = currank
                     feat.properties['Group'] = curgroup
+                    feat.properties['country'] = curcountry
 
                     featuresLim.push(feat)
 
