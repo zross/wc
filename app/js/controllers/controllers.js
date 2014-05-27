@@ -14,11 +14,19 @@ myApp.controller('DemoController', ["$scope", "$http", '$q', '$filter',
              $scope.search.country = dat.country
         }
 
+           function countryClick(country, event) {
+                console.log(country.country);
+            }
+
         $scope.orderByField = 'fifarank';
 
         $scope.$on("leafletDirectiveMap.geojsonMouseover", function(ev, leafletEvent) {
             countryMouseover(leafletEvent);
         });
+
+       $scope.$on("leafletDirectiveMap.geojsonClick", function(ev, featureSelected, leafletEvent) {
+                countryClick(featureSelected, leafletEvent);
+            });
 
         $scope.$watchCollection("search",
             function(newValue, oldValue) {
