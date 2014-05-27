@@ -84,7 +84,9 @@ select.selectpicker{
 height: 2013px;
 }
 
-
+.containerMap{
+width: 700px;
+}
 
 .filtering{
 
