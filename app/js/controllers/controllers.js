@@ -4,6 +4,16 @@
 myApp.controller('DemoController', ["$scope", "$http", '$q', '$filter',
     function($scope, $http, $q, $filter) {
 
+        $scope.search = {
+            country: '',
+            Group: ''
+        }
+
+        $scope.test = function(dat){
+            console.log($scope.search)
+             $scope.search.country = dat.country
+        }
+
         $scope.orderByField = 'fifarank';
 
         $scope.$on("leafletDirectiveMap.geojsonMouseover", function(ev, leafletEvent) {

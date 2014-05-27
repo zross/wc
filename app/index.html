@@ -88,7 +88,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr ng-repeat="foot in football | orderBy:orderByField:reverse | filter:search">
+                            <tr ng-repeat="foot in football | orderBy:orderByField:reverse | filter:search" ng-click="test(foot)">
                                 <td class='country'>{{foot.country}}</td>
                                 <td>{{foot.fifarank}}</td>
                                 <td>{{foot.spirank}}</td>
