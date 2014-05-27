@@ -1,0 +1,130 @@
+Country,Rank (FIFA),Rank (SPI),FIFA-SPI,FIFA SPI AVG,WC Group
+Spain,1,3,2,2,B
+Brazil,4,1,3,2.5,A
+Germany,2,4,2,3,G
+Argentina,7,2,5,4.5,F
+Colombia,5,6,1,5.5,C
+Uruguay,6,8,2,7,D
+Portugal,3,14,11,8.5,G
+Chile,13,5,8,9,B
+England,11,9,2,10,D
+Italy,9,12,3,10.5,D
+France,16,7,9,11.5,E
+Belgium,12,13,1,12.5,H
+Netherlands,15,10,5,12.5,B
+Switzerland,8,22,14,15,E
+Russia,18,17,1,17.5,H
+Ukraine,17,18,1,17.5,Not in WC
+United States,14,21,7,17.5,G
+Ivory Coast,21,16,5,18.5,C
+Greece,10,27,17,18.5,C
+Ecuador,28,11,17,19.5,E
+Bosnia-Herzegovina,25,15,10,20,F
+Mexico,19,25,6,22,A
+Croatia,20,30,10,25,A
+Sweden,25,29,4,27,Not in WC
+Egypt,24,32,8,28,Not in WC
+Costa Rica,34,24,10,29,D
+Honduras,30,33,3,31.5,E
+Denmark,23,41,18,32,Not in WC
+Ghana,38,26,12,32,G
+Peru,42,23,19,32.5,Not in WC
+Czech Republic,36,34,2,35,Not in WC
+Scotland,22,48,26,35,Not in WC
+Nigeria,44,28,16,36,F
+Austria,40,35,5,37.5,Not in WC
+Paraguay,55,20,35,37.5,Not in WC
+Iran,37,39,2,38,F
+Romania,32,45,13,38.5,Not in WC
+Venezuela,41,37,4,39,Not in WC
+Panama,35,46,11,40.5,Not in WC
+Japan,47,36,11,41.5,C
+Turkey,39,44,5,41.5,Not in WC
+Slovenia,29,56,27,42.5,Not in WC
+South Korea,55,31,24,43,H
+Cameroon,50,38,12,44,A
+Armenia,33,61,28,47,Not in WC
+Algeria,25,69,44,47,H
+Slovakia,46,52,6,49,Not in WC
+Australia,59,40,19,49.5,B
+Finland,52,47,5,49.5,Not in WC
+Tunisia,49,57,8,53,Not in WC
+Uzbekistan,53,54,1,53.5,Not in WC
+Republic of Ireland,66,42,24,54,Not in WC
+Guinea,51,59,8,55,Not in WC
+Bolivia,68,43,25,55.5,Not in WC
+Burkina Faso,61,51,10,56,Not in WC
+Senegal,63,49,14,56,Not in WC
+Wales,47,66,19,56.5,Not in WC
+South Africa,65,53,12,59,Not in WC
+Hungary,45,75,30,60,Not in WC
+Bulgaria,73,50,23,61.5,Not in WC
+Mali,59,64,5,61.5,Not in WC
+Libya,62,63,1,62.5,Not in WC
+Norway,55,70,15,62.5,Not in WC
+Poland,72,58,14,65,Not in WC
+Iceland,58,73,15,65.5,Not in WC
+Morocco,76,62,14,69,Not in WC
+Cape Verde Islands,42,99,57,70.5,Not in WC
+Belarus,83,60,23,71.5,Not in WC
+Israel,78,67,11,72.5,Not in WC
+Jordan,64,81,17,72.5,Not in WC
+Jamaica,81,65,16,73,Not in WC
+Albania,70,83,13,76.5,Not in WC
+Saudi Arabia,75,78,3,76.5,Not in WC
+Macedonia,80,74,6,77,Not in WC
+Congo DR,88,71,17,79.5,Not in WC
+El Salvador,69,92,23,80.5,Not in WC
+Trinidad and Tobago,74,91,17,82.5,Not in WC
+Angola,94,76,18,85,Not in WC
+Oman,82,90,8,86,Not in WC
+Azerbaijan,85,96,11,90.5,Not in WC
+New Zealand,111,72,39,91.5,Not in WC
+Zimbabwe,98,85,13,91.5,Not in WC
+China,96,88,8,92,Not in WC
+Georgia,103,82,21,92.5,Not in WC
+Haiti,77,113,36,95,Not in WC
+Benin,97,94,3,95.5,Not in WC
+Northern Ireland,84,107,23,95.5,Not in WC
+Kenya,106,87,19,96.5,Not in WC
+Guatemala,124,77,47,100.5,Not in WC
+Lithuania,104,101,3,102.5,Not in WC
+Canada,110,97,13,103.5,Not in WC
+Kuwait,108,100,8,104,Not in WC
+Moldova,99,110,11,104.5,Not in WC
+Estonia,93,119,26,106,Not in WC
+Latvia,109,112,3,110.5,Not in WC
+Cuba,90,139,49,114.5,Not in WC
+Kazakhstan,118,115,3,116.5,Not in WC
+Cyprus,130,123,7,126.5,Not in WC
+Luxembourg,112,143,31,127.5,Not in WC
+Rwanda,131,125,6,128,Not in WC
+Dominican Republic,126,134,8,130,Not in WC
+Antigua and Barbuda,142,133,9,137.5,Not in WC
+Malta,128,147,19,137.5,Not in WC
+Puerto Rico,149,137,12,143,Not in WC
+Suriname,131,159,28,145,Not in WC
+Grenada,136,157,21,146.5,Not in WC
+Guyana,151,142,9,146.5,Not in WC
+St. Vincent and Grenadines,126,167,41,146.5,Not in WC
+Liechtenstein,150,144,6,147,Not in WC
+Belize,144,151,7,147.5,Not in WC
+Nicaragua,168,138,30,153,Not in WC
+St. Kitts and Nevis,153,158,5,155.5,Not in WC
+Faroe Islands,164,153,11,158.5,Not in WC
+Malaysia,145,172,27,158.5,Not in WC
+Netherlands Antilles,157,163,6,160,Not in WC
+Bermuda,169,152,17,160.5,Not in WC
+St. Lucia,133,193,60,163,Not in WC
+Barbados,161,169,8,165,Not in WC
+Hong Kong,158,176,18,167,Not in WC
+Aruba,155,189,34,172,Not in WC
+Dominica,163,184,21,173.5,Not in WC
+Bahamas,186,186,0,186,Not in WC
+Andorra,199,181,18,190,Not in WC
+Cayman Islands,195,188,7,191.5,Not in WC
+Montserrat,188,213,25,200.5,Not in WC
+San Marino,207,198,9,202.5,Not in WC
+US Virgin Islands,194,214,20,204,Not in WC
+British Virgin Islands,197,215,18,206,Not in WC
+Turks and Caicos Islands,207,208,1,207.5,Not in WC
