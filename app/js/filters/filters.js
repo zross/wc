@@ -1,16 +1,5 @@
 'use strict';
 
-/* Filters */
-
-myApp.filter('addExclamation', function(){
-
-return function(myinput){
-
-	return myinput + '!'
-
-};
-
-})
 // https://github.com/angular-ui/ui-utils/blob/master/modules/unique/unique.js
 myApp.filter('unique', ['$parse', function ($parse) {
 

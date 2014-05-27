@@ -1,66 +1,40 @@
 'use strict';
 
-/* Controllers DON'T MANIPULATE DOM WITH CONTROLLER ONLY WITH DIRECTIVE
-MIGHT WANT TO USE NG-CLOAK SO WE DON'T SEE FLASHES OF UN PARSED DATA
-OR PUT ANGULAR SCRIPT IN HEAD*/
-var blah;
+
 myApp.controller('DemoController', ["$scope", "$http", '$q', '$filter',
     function($scope, $http, $q, $filter) {
 
         $scope.orderByField = 'fifarank';
-        $scope.reverseSort = false;
-        // $scope.limitGroup = 'A';
-        // $scope.geoTF = 'true'
-        // $scope.search.country = '';
-        // $scope.search.group = '';
 
         $scope.$on("leafletDirectiveMap.geojsonMouseover", function(ev, leafletEvent) {
             countryMouseover(leafletEvent);
         });
 
-
-        $scope.$on("leafletDirectiveMap.geojsonClick", function(ev, featureSelected, leafletEvent) {
-
-            countryClick(featureSelected, leafletEvent);
-        });
-
-
-
-        $scope.$watchCollection(
-            "search",
+        $scope.$watchCollection("search",
             function(newValue, oldValue) {
 
-                // Ignore initial setup.
                 if (newValue === oldValue) {
-
                     return;
                 }
                 var data = angular.copy($scope.footballgeo);
-                console.log(newValue)
+
                 var justGroup = _.filter(data.features, function(x) {
-                    if (newValue.Group == '' || newValue.Group==undefined) {
-                        
+                    if (newValue.Group == '' || newValue.Group == undefined) {
+
                         if (!newValue.country) {
-                            console.log('In blank group:In blank country')
                             return true
                         } else {
-                            console.log('In blank group:In NOT blank country')
-                            return $filter('filter')([x.properties.country], newValue.country).length>0
-
+                            return $filter('filter')([x.properties.country], newValue.country).length > 0
                         }
                     } else {
-                        console.log('In NOT blank group')
-                        if (!newValue.country){
-                            console.log('In NOT blank group: in blank country')
-                        return x.properties.Group == newValue.Group
-                    }else{
-                        console.log('In NOT blank group: in NOTblank country')
-                        return x.properties.Group == newValue.Group & $filter('filter')([x.properties.country], newValue.country).length>0
-                    }
+                        if (!newValue.country) {
+                            return x.properties.Group == newValue.Group
+                        } else {
+                            return x.properties.Group == newValue.Group & $filter('filter')([x.properties.country], newValue.country).length > 0
+                        }
                     }
 
                 })
-
 
                 data.features = justGroup
                 $scope.geojson = {
@@ -72,11 +46,6 @@ myApp.controller('DemoController', ["$scope", "$http", '$q', '$filter',
 
             }
         );
-
-
-
-
-
 
         angular.extend($scope, {
             center: {
@@ -91,60 +60,79 @@ myApp.controller('DemoController', ["$scope", "$http", '$q', '$filter',
             }
         });
 
-        // http://{s}.tiles.mapbox.com/v3/{user}.{map}/{z}/{x}/{y}.png
-        // In the URL below, replace 'examples.map-zr0njcqy' with your map id.
-        //var mapboxTiles = L.tileLayer('https://{s}.tiles.mapbox.com/v3/examples.map-zr0njcqy/{z}/{x}/{y}.png
 
-        function countryClick(country, event) {
-            console.log(country.properties.name);
-        }
-
-var opac = 0.8
-var circlecolors = {
-    'A': {color: '#7fc97f', opacity:opac}, 
-    'B': {color: '#beaed4', opacity:opac},
-    'C': {color: '#fdc086', opacity:opac},
-    'D': {color: '#ffff99', opacity:opac},
-    'E': {color: '#386cb0', opacity:opac},
-    'F': {color: '#f0027f', opacity:opac},
-    'G': {color: '#bf5b17', opacity:opac},
-    'H': {color: '#666666', opacity:opac}
-
-}
-
-
-function getColorFootball2(d){
-
-    return circlecolors[d.Group] || {color: 'grey', opacity:0}
-
-}
-
-
-
-        function style(feature) {
-            var vals = getColorFootball2($scope.footballObject[feature.properties.ISO3])
-            var rads = getRadiusFootball($scope.footballObject[feature.properties.ISO3])
-            return {
-                fillColor: vals.color,
-                radius: rads,
-                color: "#000",
-                weight: 1,
-                opacity: 1,
-                fillOpacity: vals.opacity
-            };
-        }
-
-
-        function getRadiusFootball(d) {
-
-
-            if (d) {
-                d = d['fifarank']
-                return Math.sqrt(1200 * 1 / d)
-            } else {
-                return 0
+        var opac = 0.8
+        var circlecolors = {
+            'A': {
+                color: '#7fc97f',
+                opacity: opac
+            },
+            'B': {
+                color: '#beaed4',
+                opacity: opac
+            },
+            'C': {
+                color: '#fdc086',
+                opacity: opac
+            },
+            'D': {
+                color: '#ffff99',
+                opacity: opac
+            },
+            'E': {
+                color: '#386cb0',
+                opacity: opac
+            },
+            'F': {
+                color: '#f0027f',
+                opacity: opac
+            },
+            'G': {
+                color: '#bf5b17',
+                opacity: opac
+            },
+            'H': {
+                color: '#666666',
+                opacity: opac
             }
+
         }
+
+            function getColorFootball(d) {
+
+                return circlecolors[d.Group] || {
+                    color: 'grey',
+                    opacity: 0
+                }
+
+            }
+
+
+
+            function style(feature) {
+                var vals = getColorFootball($scope.footballObject[feature.properties.ISO3])
+                var rads = getRadiusFootball($scope.footballObject[feature.properties.ISO3])
+                return {
+                    fillColor: vals.color,
+                    radius: rads,
+                    color: "#000",
+                    weight: 1,
+                    opacity: 1,
+                    fillOpacity: vals.opacity
+                };
+            }
+
+
+            function getRadiusFootball(d) {
+
+
+                if (d) {
+                    d = d['fifarank']
+                    return Math.sqrt(1500 / d)
+                } else {
+                    return 0
+                }
+            }
 
 
         $scope.football = [];
@@ -156,12 +144,9 @@ function getColorFootball2(d){
                 tempFootballJson[country['alpha-3']] = country;
             }
 
-
             //then set on scope
             $scope.footballObject = tempFootballJson;
             $scope.football = data;
-
-
 
         });
 
@@ -264,17 +249,9 @@ myApp.controller("GoogleMapsController", ["$scope",
                         name: 'Google Terrain',
                         layerType: 'TERRAIN',
                         type: 'google'
-                    },
-                    googleHybrid: {
-                        name: 'Google Hybrid',
-                        layerType: 'HYBRID',
-                        type: 'google'
-                    },
-                    googleRoadmap: {
-                        name: 'Google Streets',
-                        layerType: 'ROADMAP',
-                        type: 'google'
                     }
+             
+          
                 }
             },
             defaults: {

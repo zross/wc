@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"background-",
+				"background-color"
+			],
+			[
 				"getPostg",
 				"getPostgresData"
 			],
@@ -31,31 +35,23 @@
 			"file": "app/index.html",
 			"settings":
 			{
-				"buffer_size": 5850,
+				"buffer_size": 5400,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "app/js/directives/directives.js",
+			"file": "app/js/app.js",
 			"settings":
 			{
-				"buffer_size": 636,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app/lib/angular-leaflet-directive.js",
-			"settings":
-			{
-				"buffer_size": 123576,
-				"line_ending": "Windows"
+				"buffer_size": 295,
+				"line_ending": "Unix"
 			}
 		},
 		{
 			"file": "app/js/filters/filters.js",
 			"settings":
 			{
-				"buffer_size": 1125,
+				"buffer_size": 1009,
 				"line_ending": "Unix"
 			}
 		},
@@ -63,23 +59,39 @@
 			"file": "app/js/controllers/controllers.js",
 			"settings":
 			{
-				"buffer_size": 8184,
+				"buffer_size": 7213,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "app/css/main.css",
+			"file": "app/js/services/services.js",
 			"settings":
 			{
-				"buffer_size": 1582,
+				"buffer_size": 543,
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/data/football.json",
+			"settings":
+			{
+				"buffer_size": 6735,
+				"line_ending": "Windows"
 			}
 		},
 		{
 			"file": "app/css/app.css",
 			"settings":
 			{
-				"buffer_size": 2936,
+				"buffer_size": 1693,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/lib/angular-leaflet-directive.js",
+			"settings":
+			{
+				"buffer_size": 125260,
 				"line_ending": "Windows"
 			}
 		}
@@ -176,10 +188,13 @@
 	},
 	"file_history":
 	[
+		"/X/projects/nyc_air/nycStats/knitr/no2_gam/no2_gam.html",
+		"/X/web_development/working/worldcup/app/js/directives/directives.js",
+		"/X/web_development/working/worldcup/app/lib/angular-leaflet-directive.js",
+		"/X/web_development/working/worldcup/app/css/main.css",
 		"/X/web_development/working/worldcup/app/js/controllers/controllers.js",
 		"/X/web_development/working/worldcup/app/lib/Google.js",
 		"/X/web_development/working/worldcup/app/js/app.js",
-		"/X/web_development/working/worldcup/app/lib/angular-leaflet-directive.js",
 		"/X/web_development/working/worldcup/app/data/football.json",
 		"/X/web_development/working/worldcup/worldcup",
 		"/X/projects/cehtp_pesticide/web/cehtp_pesticide/pg-server.js",
@@ -312,6 +327,14 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"legend",
+			"legned",
+			"legendClas",
+			"getonaddarray",
+			"legend",
+			"leafletLegendhel",
+			"leafletLeg",
+			"legend",
 			"google",
 			"props",
 			"}\n",
@@ -361,7 +384,7 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -370,15 +393,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5850,
+						"buffer_size": 5400,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1281,
-								1281
+								5053,
+								4994
 							]
 						],
 						"settings":
@@ -386,30 +409,38 @@
 							"BracketHighlighterBusy": false,
 							"bh_regions":
 							[
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
 								"bh_round",
 								"bh_round_center",
 								"bh_round_open",
 								"bh_round_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
 								"bh_angle",
 								"bh_angle_center",
 								"bh_angle_open",
 								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
 								"bh_double_quote",
 								"bh_double_quote_center",
 								"bh_double_quote_open",
@@ -417,15 +448,7 @@
 								"bh_tag",
 								"bh_tag_center",
 								"bh_tag_open",
-								"bh_tag_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close"
+								"bh_tag_close"
 							],
 							"codeintel": true,
 							"codeintel_config":
@@ -536,27 +559,27 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 342.0,
+						"translation.y": 2329.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "app/js/directives/directives.js",
+					"file": "app/js/app.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 636,
+						"buffer_size": 295,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								163,
+								163
 							]
 						],
 						"settings":
@@ -564,30 +587,38 @@
 							"BracketHighlighterBusy": false,
 							"bh_regions":
 							[
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
 								"bh_round",
 								"bh_round_center",
 								"bh_round_open",
 								"bh_round_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
 								"bh_angle",
 								"bh_angle_center",
 								"bh_angle_open",
 								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
 								"bh_double_quote",
 								"bh_double_quote_center",
 								"bh_double_quote_open",
@@ -595,15 +626,7 @@
 								"bh_tag",
 								"bh_tag_center",
 								"bh_tag_open",
-								"bh_tag_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close"
+								"bh_tag_close"
 							],
 							"codeintel": true,
 							"codeintel_config":
@@ -709,9 +732,7 @@
 							},
 							"codeintel_tooltips": "popup",
 							"sublime_auto_complete": true,
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -722,93 +743,19 @@
 				},
 				{
 					"buffer": 2,
-					"file": "app/lib/angular-leaflet-directive.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 123576,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								120159,
-								120165
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close"
-							],
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 60206.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
 					"file": "app/js/filters/filters.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1125,
+						"buffer_size": 1009,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								302,
-								302
+								14,
+								14
 							]
 						],
 						"settings":
@@ -816,30 +763,38 @@
 							"BracketHighlighterBusy": false,
 							"bh_regions":
 							[
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
 								"bh_round",
 								"bh_round_center",
 								"bh_round_open",
 								"bh_round_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
 								"bh_angle",
 								"bh_angle_center",
 								"bh_angle_open",
 								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
 								"bh_double_quote",
 								"bh_double_quote_center",
 								"bh_double_quote_open",
@@ -847,15 +802,7 @@
 								"bh_tag",
 								"bh_tag_center",
 								"bh_tag_open",
-								"bh_tag_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close"
+								"bh_tag_close"
 							],
 							"codeintel": true,
 							"codeintel_config":
@@ -969,24 +916,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 3,
 					"file": "app/js/controllers/controllers.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8184,
+						"buffer_size": 7213,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								7172,
-								7172
+								2782,
+								2782
 							]
 						],
 						"settings":
@@ -994,30 +941,38 @@
 							"BracketHighlighterBusy": false,
 							"bh_regions":
 							[
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
 								"bh_round",
 								"bh_round_center",
 								"bh_round_open",
 								"bh_round_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
 								"bh_angle",
 								"bh_angle_center",
 								"bh_angle_open",
 								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
 								"bh_double_quote",
 								"bh_double_quote_center",
 								"bh_double_quote_open",
@@ -1025,15 +980,7 @@
 								"bh_tag",
 								"bh_tag_center",
 								"bh_tag_open",
-								"bh_tag_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close"
+								"bh_tag_close"
 							],
 							"codeintel": true,
 							"codeintel_config":
@@ -1144,99 +1091,198 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 5306.0,
+						"translation.y": 1716.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "app/css/main.css",
+					"buffer": 4,
+					"file": "app/js/services/services.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1582,
+						"buffer_size": 543,
 						"regions":
 						{
-							"gutter_color_118":
+						},
+						"selection":
+						[
+							[
+								74,
+								74
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close"
+							],
+							"codeintel": true,
+							"codeintel_config":
 							{
-								"flags": 144,
-								"icon": "Cache/GutterColor/555555.png",
-								"regions":
-								[
+								"JavaScript":
+								{
+									"codeintel_max_recursive_dir_depth": 2,
+									"codeintel_scan_files_in_project": false,
+									"javascriptExtraPaths":
 									[
-										118,
-										134
 									]
-								],
-								"scope": "gutter_color"
+								},
+								"PHP":
+								{
+									"codeintel_max_recursive_dir_depth": 5,
+									"codeintel_scan_files_in_project": false,
+									"phpExtraPaths":
+									[
+									]
+								},
+								"Python":
+								{
+									"env":
+									{
+									}
+								}
 							},
-							"gutter_color_1367":
+							"codeintel_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_live": true,
+							"codeintel_live_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_max_recursive_dir_depth": 10,
+							"codeintel_scan_exclude_dir":
 							{
-								"flags": 144,
-								"icon": "Cache/GutterColor/cccccc.png",
-								"regions":
+								"JavaScript":
 								[
-									[
-										1367,
-										1398
-									]
-								],
-								"scope": "gutter_color"
+									"/build/",
+									"/min/"
+								]
 							},
-							"gutter_color_318":
+							"codeintel_scan_files_in_project": true,
+							"codeintel_selected_catalogs":
+							[
+								"PyWin32",
+								"jQuery",
+								"Rails"
+							],
+							"codeintel_snippets": true,
+							"codeintel_syntax_map":
 							{
-								"flags": 144,
-								"icon": "Cache/GutterColor/333333.png",
-								"regions":
-								[
-									[
-										318,
-										334
-									]
-								],
-								"scope": "gutter_color"
+								"Python Django": "Python"
 							},
-							"gutter_color_500":
-							{
-								"flags": 144,
-								"icon": "Cache/GutterColor/f39c12.png",
-								"regions":
-								[
-									[
-										500,
-										519
-									]
-								],
-								"scope": "gutter_color"
-							},
-							"gutter_color_7":
-							{
-								"flags": 144,
-								"icon": "Cache/GutterColor/f2f2f2.png",
-								"regions":
-								[
-									[
-										7,
-										35
-									]
-								],
-								"scope": "gutter_color"
-							},
-							"gutter_color_895":
-							{
-								"flags": 144,
-								"icon": "Cache/GutterColor/7b7b7b.png",
-								"regions":
-								[
-									[
-										895,
-										914
-									]
-								],
-								"scope": "gutter_color"
-							}
+							"codeintel_tooltips": "popup",
+							"sublime_auto_complete": true,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/data/football.json",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 6735,
+						"regions":
+						{
 						},
 						"selection":
 						[
@@ -1250,10 +1296,22 @@
 							"BracketHighlighterBusy": false,
 							"bh_regions":
 							[
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
 								"bh_square",
 								"bh_square_center",
 								"bh_square_open",
@@ -1262,44 +1320,30 @@
 								"bh_default_center",
 								"bh_default_open",
 								"bh_default_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
 								"bh_unmatched",
 								"bh_unmatched_center",
 								"bh_unmatched_open",
 								"bh_unmatched_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close"
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close"
 							],
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/JavaScript/JSON.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 906.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
@@ -1308,9 +1352,178 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2936,
+						"buffer_size": 1693,
 						"regions":
 						{
+							"gutter_color_1488":
+							{
+								"flags": 144,
+								"icon": "Cache/GutterColor/918f8f.png",
+								"regions":
+								[
+									[
+										1555,
+										1585
+									]
+								],
+								"scope": "gutter_color"
+							},
+							"gutter_color_1530":
+							{
+								"flags": 144,
+								"icon": "Cache/GutterColor/aeafaf.png",
+								"regions":
+								[
+									[
+										1555,
+										1585
+									]
+								],
+								"scope": "gutter_color"
+							},
+							"gutter_color_1532":
+							{
+								"flags": 144,
+								"icon": "Cache/GutterColor/aeafaf.png",
+								"regions":
+								[
+									[
+										1555,
+										1585
+									]
+								],
+								"scope": "gutter_color"
+							},
+							"gutter_color_154":
+							{
+								"flags": 144,
+								"icon": "Cache/GutterColor/dee4ea.png",
+								"regions":
+								[
+									[
+										154,
+										184
+									]
+								],
+								"scope": "gutter_color"
+							},
+							"gutter_color_1543":
+							{
+								"flags": 144,
+								"icon": "Cache/GutterColor/918f8f.png",
+								"regions":
+								[
+									[
+										1555,
+										1585
+									]
+								],
+								"scope": "gutter_color"
+							},
+							"gutter_color_1555":
+							{
+								"flags": 144,
+								"icon": "Cache/GutterColor/aeafaf.png",
+								"regions":
+								[
+									[
+										1555,
+										1585
+									]
+								],
+								"scope": "gutter_color"
+							},
+							"gutter_color_1564":
+							{
+								"flags": 144,
+								"icon": "Cache/GutterColor/918f8f.png",
+								"regions":
+								[
+									[
+										1555,
+										1585
+									]
+								],
+								"scope": "gutter_color"
+							},
+							"gutter_color_1616":
+							{
+								"flags": 144,
+								"icon": "Cache/GutterColor/918f8f.png",
+								"regions":
+								[
+									[
+										1555,
+										1585
+									]
+								],
+								"scope": "gutter_color"
+							},
+							"gutter_color_172":
+							{
+								"flags": 144,
+								"icon": "Cache/GutterColor/d1cfcf.png",
+								"regions":
+								[
+									[
+										154,
+										184
+									]
+								],
+								"scope": "gutter_color"
+							},
+							"gutter_color_1759":
+							{
+								"flags": 144,
+								"icon": "Cache/GutterColor/cccccc.png",
+								"regions":
+								[
+									[
+										1540,
+										1540
+									]
+								],
+								"scope": "gutter_color"
+							},
+							"gutter_color_1776":
+							{
+								"flags": 144,
+								"icon": "Cache/GutterColor/cccccc.png",
+								"regions":
+								[
+									[
+										1540,
+										1540
+									]
+								],
+								"scope": "gutter_color"
+							},
+							"gutter_color_1803":
+							{
+								"flags": 144,
+								"icon": "Cache/GutterColor/cccccc.png",
+								"regions":
+								[
+									[
+										1540,
+										1540
+									]
+								],
+								"scope": "gutter_color"
+							},
+							"gutter_color_1837":
+							{
+								"flags": 144,
+								"icon": "Cache/GutterColor/918f8f.png",
+								"regions":
+								[
+									[
+										1555,
+										1585
+									]
+								],
+								"scope": "gutter_color"
+							},
 							"gutter_color_1845":
 							{
 								"flags": 144,
@@ -1318,8 +1531,21 @@
 								"regions":
 								[
 									[
-										1865,
-										1889
+										788,
+										812
+									]
+								],
+								"scope": "gutter_color"
+							},
+							"gutter_color_1864":
+							{
+								"flags": 144,
+								"icon": "Cache/GutterColor/918f8f.png",
+								"regions":
+								[
+									[
+										1555,
+										1585
 									]
 								],
 								"scope": "gutter_color"
@@ -1331,8 +1557,8 @@
 								"regions":
 								[
 									[
-										2020,
-										2036
+										943,
+										959
 									]
 								],
 								"scope": "gutter_color"
@@ -1344,21 +1570,385 @@
 								"regions":
 								[
 									[
-										2020,
-										2036
+										943,
+										959
 									]
 								],
 								"scope": "gutter_color"
 							},
-							"gutter_color_34":
+							"gutter_color_2048":
 							{
 								"flags": 144,
-								"icon": "Cache/GutterColor/003366.png",
+								"icon": "Cache/GutterColor/555555.png",
 								"regions":
 								[
 									[
-										34,
-										62
+										943,
+										959
+									]
+								],
+								"scope": "gutter_color"
+							},
+							"gutter_color_2050":
+							{
+								"flags": 144,
+								"icon": "Cache/GutterColor/555555.png",
+								"regions":
+								[
+									[
+										944,
+										960
+									]
+								],
+								"scope": "gutter_color"
+							},
+							"gutter_color_2051":
+							{
+								"flags": 144,
+								"icon": "Cache/GutterColor/555555.png",
+								"regions":
+								[
+									[
+										943,
+										959
+									]
+								],
+								"scope": "gutter_color"
+							},
+							"gutter_color_2816":
+							{
+								"flags": 144,
+								"icon": "Cache/GutterColor/cccccc.png",
+								"regions":
+								[
+									[
+										1540,
+										1540
+									]
+								],
+								"scope": "gutter_color"
+							},
+							"gutter_color_2819":
+							{
+								"flags": 144,
+								"icon": "Cache/GutterColor/cccccc.png",
+								"regions":
+								[
+									[
+										1540,
+										1540
+									]
+								],
+								"scope": "gutter_color"
+							},
+							"gutter_color_2843":
+							{
+								"flags": 144,
+								"icon": "Cache/GutterColor/cccccc.png",
+								"regions":
+								[
+									[
+										1540,
+										1540
+									]
+								],
+								"scope": "gutter_color"
+							},
+							"gutter_color_2864":
+							{
+								"flags": 144,
+								"icon": "Cache/GutterColor/cccccc.png",
+								"regions":
+								[
+									[
+										1540,
+										1540
+									]
+								],
+								"scope": "gutter_color"
+							},
+							"gutter_color_2867":
+							{
+								"flags": 144,
+								"icon": "Cache/GutterColor/cccccc.png",
+								"regions":
+								[
+									[
+										1540,
+										1540
+									]
+								],
+								"scope": "gutter_color"
+							},
+							"gutter_color_2870":
+							{
+								"flags": 144,
+								"icon": "Cache/GutterColor/cccccc.png",
+								"regions":
+								[
+									[
+										1540,
+										1540
+									]
+								],
+								"scope": "gutter_color"
+							},
+							"gutter_color_2891":
+							{
+								"flags": 144,
+								"icon": "Cache/GutterColor/cccccc.png",
+								"regions":
+								[
+									[
+										1540,
+										1540
+									]
+								],
+								"scope": "gutter_color"
+							},
+							"gutter_color_2908":
+							{
+								"flags": 144,
+								"icon": "Cache/GutterColor/cccccc.png",
+								"regions":
+								[
+									[
+										1540,
+										1540
+									]
+								],
+								"scope": "gutter_color"
+							},
+							"gutter_color_2911":
+							{
+								"flags": 144,
+								"icon": "Cache/GutterColor/cccccc.png",
+								"regions":
+								[
+									[
+										1540,
+										1540
+									]
+								],
+								"scope": "gutter_color"
+							},
+							"gutter_color_2918":
+							{
+								"flags": 144,
+								"icon": "Cache/GutterColor/cccccc.png",
+								"regions":
+								[
+									[
+										1540,
+										1540
+									]
+								],
+								"scope": "gutter_color"
+							},
+							"gutter_color_2935":
+							{
+								"flags": 144,
+								"icon": "Cache/GutterColor/cccccc.png",
+								"regions":
+								[
+									[
+										1540,
+										1716
+									]
+								],
+								"scope": "gutter_color"
+							},
+							"gutter_color_2962":
+							{
+								"flags": 144,
+								"icon": "Cache/GutterColor/cccccc.png",
+								"regions":
+								[
+									[
+										1540,
+										1540
+									]
+								],
+								"scope": "gutter_color"
+							},
+							"gutter_color_2969":
+							{
+								"flags": 144,
+								"icon": "Cache/GutterColor/918f8f.png",
+								"regions":
+								[
+									[
+										1555,
+										1585
+									]
+								],
+								"scope": "gutter_color"
+							},
+							"gutter_color_2972":
+							{
+								"flags": 144,
+								"icon": "Cache/GutterColor/918f8f.png",
+								"regions":
+								[
+									[
+										1555,
+										1585
+									]
+								],
+								"scope": "gutter_color"
+							},
+							"gutter_color_3102":
+							{
+								"flags": 144,
+								"icon": "Cache/GutterColor/cccccc.png",
+								"regions":
+								[
+									[
+										1540,
+										1540
+									]
+								],
+								"scope": "gutter_color"
+							},
+							"gutter_color_3120":
+							{
+								"flags": 144,
+								"icon": "Cache/GutterColor/cccccc.png",
+								"regions":
+								[
+									[
+										1540,
+										1540
+									]
+								],
+								"scope": "gutter_color"
+							},
+							"gutter_color_3150":
+							{
+								"flags": 144,
+								"icon": "Cache/GutterColor/cccccc.png",
+								"regions":
+								[
+									[
+										1540,
+										1540
+									]
+								],
+								"scope": "gutter_color"
+							},
+							"gutter_color_3164":
+							{
+								"flags": 144,
+								"icon": "Cache/GutterColor/cccccc.png",
+								"regions":
+								[
+									[
+										1540,
+										1540
+									]
+								],
+								"scope": "gutter_color"
+							},
+							"gutter_color_3194":
+							{
+								"flags": 144,
+								"icon": "Cache/GutterColor/cccccc.png",
+								"regions":
+								[
+									[
+										1540,
+										1694
+									]
+								],
+								"scope": "gutter_color"
+							},
+							"gutter_color_866":
+							{
+								"flags": 144,
+								"icon": "Cache/GutterColor/555555.png",
+								"regions":
+								[
+									[
+										943,
+										959
+									]
+								],
+								"scope": "gutter_color"
+							},
+							"gutter_color_918":
+							{
+								"flags": 144,
+								"icon": "Cache/GutterColor/555555.png",
+								"regions":
+								[
+									[
+										943,
+										959
+									]
+								],
+								"scope": "gutter_color"
+							},
+							"gutter_color_925":
+							{
+								"flags": 144,
+								"icon": "Cache/GutterColor/555555.png",
+								"regions":
+								[
+									[
+										943,
+										959
+									]
+								],
+								"scope": "gutter_color"
+							},
+							"gutter_color_943":
+							{
+								"flags": 144,
+								"icon": "Cache/GutterColor/555555.png",
+								"regions":
+								[
+									[
+										943,
+										959
+									]
+								],
+								"scope": "gutter_color"
+							},
+							"gutter_color_95":
+							{
+								"flags": 144,
+								"icon": "Cache/GutterColor/d1cfcf.png",
+								"regions":
+								[
+									[
+										154,
+										184
+									]
+								],
+								"scope": "gutter_color"
+							},
+							"gutter_color_964":
+							{
+								"flags": 144,
+								"icon": "Cache/GutterColor/555555.png",
+								"regions":
+								[
+									[
+										943,
+										959
+									]
+								],
+								"scope": "gutter_color"
+							},
+							"gutter_color_994":
+							{
+								"flags": 144,
+								"icon": "Cache/GutterColor/555555.png",
+								"regions":
+								[
+									[
+										943,
+										959
 									]
 								],
 								"scope": "gutter_color"
@@ -1367,8 +1957,8 @@
 						"selection":
 						[
 							[
-								470,
-								470
+								519,
+								519
 							]
 						],
 						"settings":
@@ -1376,10 +1966,22 @@
 							"BracketHighlighterBusy": false,
 							"bh_regions":
 							[
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
 								"bh_square",
 								"bh_square_center",
 								"bh_square_open",
@@ -1388,34 +1990,22 @@
 								"bh_default_center",
 								"bh_default_open",
 								"bh_default_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
 								"bh_unmatched",
 								"bh_unmatched_center",
 								"bh_unmatched_open",
 								"bh_unmatched_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close"
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close"
 							],
 							"codeintel": true,
 							"codeintel_config":
@@ -1526,10 +2116,201 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 192.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "app/lib/angular-leaflet-directive.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 125260,
+						"regions":
+						{
+							"bookmarks":
+							{
+								"flags": 144,
+								"icon": "bookmark",
+								"regions":
+								[
+									[
+										86480,
+										86480
+									]
+								],
+								"scope": "bookmarks"
+							}
+						},
+						"selection":
+						[
+							[
+								86626,
+								86626
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close"
+							],
+							"codeintel": true,
+							"codeintel_config":
+							{
+								"JavaScript":
+								{
+									"codeintel_max_recursive_dir_depth": 2,
+									"codeintel_scan_files_in_project": false,
+									"javascriptExtraPaths":
+									[
+									]
+								},
+								"PHP":
+								{
+									"codeintel_max_recursive_dir_depth": 5,
+									"codeintel_scan_files_in_project": false,
+									"phpExtraPaths":
+									[
+									]
+								},
+								"Python":
+								{
+									"env":
+									{
+									}
+								}
+							},
+							"codeintel_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_live": true,
+							"codeintel_live_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_max_recursive_dir_depth": 10,
+							"codeintel_scan_exclude_dir":
+							{
+								"JavaScript":
+								[
+									"/build/",
+									"/min/"
+								]
+							},
+							"codeintel_scan_files_in_project": true,
+							"codeintel_selected_catalogs":
+							[
+								"PyWin32",
+								"jQuery",
+								"Rails"
+							],
+							"codeintel_snippets": true,
+							"codeintel_syntax_map":
+							{
+								"Python Django": "Python"
+							},
+							"codeintel_tooltips": "popup",
+							"sublime_auto_complete": true,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 43706.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
 					"type": "text"
 				}
 			]

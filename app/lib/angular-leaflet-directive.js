@@ -1995,9 +1995,43 @@
         return div;
       };
     };
+    var _getOnAddArrayLegend2 = function (legend, legendClass) {
+      return function () {
+        var div = L.DomUtil.create('div', legendClass);
+        div.innerHTML += 'FIFA Rank <div class="legendcircle"> <svg height="65" width="60" >'+
+        '<rect width="50"/>'+
+        '<circle cx="20" cy="35" r="15" stroke="black" stroke-width="2" fill="#ccc7c7"/>' +
+        '<circle cx="20" cy="45" r="5" stroke="black" stroke-width="2" fill="#ccc7c7"/>' +
+        '<text font-size="10" x="1" y="15">Highest</text>'+
+        '<text font-size="10" x="2" y="60">Lowest</text>'+
+        '</svg> </div>'
+       //  <div class="legendcircle"> <svg height="120" width="130" fill="black">
+       //  <rect width="130" height="120" stroke="blue" fill="purple"
+       // fill-opacity="0.5" stroke-opacity="0.8"/>'
+//   <circle cx="60" cy="60" r="30" stroke="black" stroke-width="3" fill="none"/>
+//   <circle cx="60" cy="82" r="7" stroke="black" stroke-width="3" fill="none" />
+//   <text x="22" y="23">Top rank (1)</text>
+//   <text x="13" y="110">Bottom rank (32)</text>
+// </svg> </div>'
+
+
+        div.innerHTML +="<span class='legend-header'><b>Group</b></span>"
+        for (var i = 0; i < legend.colors.length; i++) {
+          div.innerHTML += '<div class="outline">' + '<i style="background:' + legend.colors[i] + '"></i></div>' + '<div class="info-label">' + legend.labels[i] + '</div>';
+        }
+        if (!L.Browser.touch) {
+          L.DomEvent.disableClickPropagation(div);
+          L.DomEvent.on(div, 'mousewheel', L.DomEvent.stopPropagation);
+        } else {
+          L.DomEvent.on(div, 'click', L.DomEvent.stopPropagation);
+        }
+
+        return div;
+      };
+    };
     return {
       getOnAddArcGISLegend: _getOnAddArcGISLegend,
-      getOnAddArrayLegend: _getOnAddArrayLegend,
+      getOnAddArrayLegend: _getOnAddArrayLegend2,
       updateArcGISLegend: _updateArcGISLegend
     };
   });
