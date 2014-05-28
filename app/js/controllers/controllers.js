@@ -9,14 +9,13 @@ myApp.controller('DemoController', ["$scope", "$http", '$q', '$filter',
             Group: ''
         }
 
-        $scope.test = function(dat){
-            console.log($scope.search)
+        $scope.tableClick = function(dat){
              $scope.search.country = dat.country
         }
 
-           function countryClick(country, event) {
-                console.log(country.country);
-            }
+           // function countryClick(country, event) {
+           //      console.log(country);
+           //  }
 
         $scope.orderByField = 'fifarank';
 
@@ -25,8 +24,13 @@ myApp.controller('DemoController', ["$scope", "$http", '$q', '$filter',
         });
 
        $scope.$on("leafletDirectiveMap.geojsonClick", function(ev, featureSelected, leafletEvent) {
-                countryClick(featureSelected, leafletEvent);
+                $scope.search.country=featureSelected.properties.country
             });
+
+       $scope.clearSelections = function(){
+        $scope.search.country = ''
+        $scope.search.Group = ''
+       }
 
         $scope.$watchCollection("search",
             function(newValue, oldValue) {
